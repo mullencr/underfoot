@@ -1,0 +1,90 @@
+///en_pathing_controller(enemy)
+enemy = argument0;
+
+// Check the end point (where the player is)
+// There is only ever one player, so we can use obj_player successfully
+
+// If the player is on a platform, get the instance of that platform.
+with(obj_player) {
+    other.player_plat = instance_place(obj_player.x, (obj_player.y + 3), obj_surface_parent);
+}
+// Get the instance of the platform that the enemy is on.
+enemy_plat = instance_place(enemy.x, (enemy.y + 1), obj_surface_parent);
+
+// TODO: REMOVE
+obj_plat.sprite_index = spr_plat;
+obj_floor.sprite_index = spr_floor;
+
+// Only run the dijkstra's if it can be reached
+// If this method is called, chasing is true.
+// If the player is on the ground, run dijkstra's
+if (en_search_graph(enemy.plat_graph, enemy_plat, player_plat)) {
+    if ((player_plat != noone) && (enemy_plat != noone)) {
+        // Get the list of destinations
+        output = "path: ";
+        route = en_get_plat_route(enemy.plat_graph, enemy_plat, player_plat);
+        // Change their color to signal, append our putput
+        for(i = 0; i < ds_list_size(route); i++) {
+            inst = ds_list_find_value(route, i);
+            if(inst.object_index == obj_plat) {
+                inst.sprite_index = spr_plat_signal;
+            } else if (inst.object_index == obj_floor) {
+                inst.sprite_index = spr_floor_signal;
+            }
+            output += string(inst) + ", "
+        }
+        show_debug_message(output);
+    }
+} 
+
+// Move the enemy.
+if(ds_exists(route, ds_type_list)) {
+    // If dijkstra's ran, we can make them follow the path.
+    // Route should always start with current plat.
+    curr_plat = ds_list_find_value(route, 0);
+    next_plat = ds_list_find_value(route, 1);
+    // If we're on the same platform, move towards the player x.
+    // If we're on the player platform, next_plat should be undefined.
+    if(is_undefined(next_plat)) {
+        show_debug_message("Next plat is NOT DEFINED");
+        // Move towards the player.
+        if(((enemy.x > obj_player.x && enemy.dir > 0) || (enemy.x < obj_player.x && enemy.dir < 0)) && place_meeting(enemy.x, enemy.y+1, obj_surface_parent) && curr_plat == player_plat && player_plat != noone) {
+            // Move towards the player x
+            // If our current direction points away from the point, switch it.
+            enemy.dir *= -1;
+        } /*else {
+            show_debug_message("Player NOT ON PLAT");
+            if (place_meeting(enemy.x, enemy.y+1, obj_surface_parent))
+                show_debug_message("Enemy SUCCESSFULLY IDLING");
+                enemy.move_status = move_status.idling;
+        }*/
+    } else {
+        show_debug_message("Next plat is DEFINED");
+        // Otherwise move towards the jump x.
+        // Find the jump point for the current platform to the next platform.
+        jump_info = ds_map_find_value(enemy.plat_graph[? curr_plat], next_plat);
+        jump_x = ds_list_find_value(jump_info, 0);
+        jump_dir = ds_list_find_value(jump_info, 1);
+        // If we hit the jump x & we're on the ground.
+        next_x = enemy.x + enemy.hsp;
+        if((next_x < jump_x && jump_x <= enemy.x)) {
+            show_debug_message("left pass");
+        } else if ((enemy.x <= jump_x && jump_x < next_x)) {
+            show_debug_message("right pass");
+        }
+        left_pass = (next_x < jump_x && jump_x <= enemy.x);
+        right_pass = (enemy.x < jump_x && jump_x < next_x);
+        if((left_pass || right_pass) && place_meeting(enemy.x, enemy.y+1, obj_surface_parent)) {
+            //  if dir is wrong, swap it.
+            if (jump_dir != enemy.dir) {
+                enemy.dir *= -1;
+            }
+            enemy.vsp = -enemy.jumpspeed;
+            ds_list_delete(route, 0);
+        } else if(((enemy.x > jump_x && enemy.dir > 0) || (enemy.x < jump_x && enemy.dir < 0)) && place_meeting(enemy.x, enemy.y+1, obj_surface_parent)) {
+            // Move towards the jump_x.
+            // If our current direction points away from the point, switch it.
+            enemy.dir *= -1;
+        }
+    }
+}
