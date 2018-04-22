@@ -33,7 +33,7 @@ if (en_search_graph(enemy.plat_graph, enemy_plat, player_plat)) {
             }
             output += string(inst) + ", "
         }
-        show_debug_message(output);
+        // show_debug_message(output);
     }
 } 
 
@@ -46,7 +46,7 @@ if(ds_exists(route, ds_type_list)) {
     // If we're on the same platform, move towards the player x.
     // If we're on the player platform, next_plat should be undefined.
     if(is_undefined(next_plat)) {
-        show_debug_message("Next plat is NOT DEFINED");
+        // show_debug_message("Next plat is NOT DEFINED");
         // Move towards the player.
         if(((enemy.x > obj_player.x && enemy.dir > 0) || (enemy.x < obj_player.x && enemy.dir < 0)) && place_meeting(enemy.x, enemy.y+1, obj_surface_parent) && curr_plat == player_plat && player_plat != noone) {
             // Move towards the player x
@@ -59,22 +59,29 @@ if(ds_exists(route, ds_type_list)) {
                 enemy.move_status = move_status.idling;
         }*/
     } else {
-        show_debug_message("Next plat is DEFINED");
+        // show_debug_message("Next plat is DEFINED");
         // Otherwise move towards the jump x.
         // Find the jump point for the current platform to the next platform.
         jump_info = ds_map_find_value(enemy.plat_graph[? curr_plat], next_plat);
         jump_x = ds_list_find_value(jump_info, 0);
         jump_dir = ds_list_find_value(jump_info, 1);
+        
         // If we hit the jump x & we're on the ground.
         next_x = enemy.x + enemy.hsp;
+        
         if((next_x < jump_x && jump_x <= enemy.x)) {
             show_debug_message("left pass");
         } else if ((enemy.x <= jump_x && jump_x < next_x)) {
             show_debug_message("right pass");
         }
-        left_pass = (next_x < jump_x && jump_x <= enemy.x);
-        right_pass = (enemy.x < jump_x && jump_x < next_x);
+
+        show_debug_message(string(enemy.x) + "," + string(enemy.y));
+
+        left_pass = (next_x <= jump_x && jump_x <= enemy.x);
+        right_pass = (enemy.x <= jump_x && jump_x <= next_x);
         if((left_pass || right_pass) && place_meeting(enemy.x, enemy.y+1, obj_surface_parent)) {
+            // Set the x to the jump x to be sure.
+            enemy.x = jump_x;
             //  if dir is wrong, swap it.
             if (jump_dir != enemy.dir) {
                 enemy.dir *= -1;

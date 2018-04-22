@@ -81,11 +81,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Movement
-hsp = dir * movespeed;
-vsp += grav;
-
-en_collision(self);
+            <string>///Movement
 en_fear_of_heights(self);
 
 en_ground_update_move_status(self);
@@ -99,6 +95,10 @@ if(self.move_status == move_status.idling) {
     movespeed = 0;
 }
 
+/// Movement
+hsp = dir * movespeed;
+vsp += grav;
+en_collision(self);
 enemy.x += enemy.hsp;
 enemy.y += enemy.vsp;
 </string>

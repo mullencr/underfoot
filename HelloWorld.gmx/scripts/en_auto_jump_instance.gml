@@ -24,8 +24,8 @@ while(!place_meeting(enemy.sub_x, enemy.sub_y, obj_wall) or on_plat) {
     check_y = enemy.sub_y;
     check_x = enemy.sub_x - (bbox_right + 1 - bbox_left)/2*enemy.sub_dir;
     // imitate motion
-    enemy.sub_vsp += enemy.grav; // Gravity is a constant
     enemy.sub_hsp = enemy.sub_dir * enemy.movespeed;
+    enemy.sub_vsp += enemy.grav; // Gravity is a constant
     
     // Add in horizontal collision.
     // Horizontal collision
@@ -36,7 +36,6 @@ while(!place_meeting(enemy.sub_x, enemy.sub_y, obj_wall) or on_plat) {
        enemy.sub_hsp = 0;
        enemy.sub_dir *= -1;
     }
-    enemy.sub_x += enemy.sub_hsp;
     
     // Vertical collision
     if (place_meeting(enemy.sub_x, enemy.sub_y+enemy.sub_vsp, obj_surface_parent) && enemy.sub_vsp < 0) {
@@ -44,8 +43,13 @@ while(!place_meeting(enemy.sub_x, enemy.sub_y, obj_wall) or on_plat) {
             enemy.sub_y += sign(enemy.sub_vsp);
         }
         enemy.sub_vsp = 0;
+        show_debug_message("Vertical collision registered in auto jump");
     }
+    
+    enemy.sub_x += enemy.sub_hsp;
     enemy.sub_y += enemy.sub_vsp;
+    
+    show_debug_message(string(enemy.sub_x) + "," + string(enemy.sub_y));
     
     // Get the instance that we collide with, if any. Returns noone if there's nothing.
     inst = instance_place(enemy.sub_x, enemy.sub_y, obj_surface_parent);
