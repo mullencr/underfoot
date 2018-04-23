@@ -51,5 +51,26 @@ while(num_turns < 3) {
         ds_list_add(enemy.sub_list, enemy.sub_x, enemy.sub_dir);
         ret[? inst] = enemy.sub_list;
     }
-} // End while. We've turned thrice and covered all of the accessible platforms.
+} // End while. We've turned thrice and covered all of the accessible platforms while jumping.
+
+// Now, we need to check the two edges.
+inst_right = en_node_walk_off_edge(plat, 1);
+if (inst_right != noone) {
+    // add it with a jump_x of noone and an accurate jump dir.
+    enemy.sub_list = ds_list_create();
+    ds_list_add(enemy.sub_list, noone, 1);
+    // NOTE: this will replace an entry in the list from before
+    // This is preferred, as these downward jumps were sometimes erroneous.
+    ret[? inst_right] = enemy.sub_list;
+}
+// Reverse the direction and repeat once.
+inst_left = en_node_walk_off_edge(plat, -1);
+if (inst_left != noone) {
+    // add it with a jump_x of noone and an accurate jump dir.
+    enemy.sub_list = ds_list_create();
+    ds_list_add(enemy.sub_list, noone, -1);
+    ret[? inst_left] = enemy.sub_list;
+}
+
+
 return ret;

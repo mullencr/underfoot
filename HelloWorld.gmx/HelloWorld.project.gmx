@@ -46,19 +46,24 @@
       <script>scripts\en_auto_jump.gml</script>
       <script>scripts\en_fear_of_heights.gml</script>
       <scripts name="smart_movement">
-        <script>scripts\en_get_plat_route.gml</script>
-        <script>scripts\en_pathing_controller.gml</script>
-        <script>scripts\en_get_node_children.gml</script>
-        <script>scripts\en_get_ground_instance.gml</script>
-        <script>scripts\en_init_graphs.gml</script>
-        <script>scripts\en_get_ground_access.gml</script>
-        <script>scripts\en_auto_jump_instance.gml</script>
-        <script>scripts\get_next_node.gml</script>
-        <script>scripts\get_lowest_node.gml</script>
-        <script>scripts\en_search_graph.gml</script>
-        <script>scripts\en_ground_update_move_status.gml</script>
-        <script>scripts\en_theory_collision.gml</script>
-        <script>scripts\en_fake_move.gml</script>
+        <scripts name="init">
+          <script>scripts\en_init_graphs.gml</script>
+          <script>scripts\en_get_ground_access.gml</script>
+          <script>scripts\en_get_ground_instance.gml</script>
+          <script>scripts\en_get_node_children.gml</script>
+          <script>scripts\en_fake_move.gml</script>
+          <script>scripts\en_theory_collision.gml</script>
+          <script>scripts\en_auto_jump_instance.gml</script>
+          <script>scripts\get_next_node.gml</script>
+          <script>scripts\en_node_walk_off_edge.gml</script>
+        </scripts>
+        <scripts name="runtime">
+          <script>scripts\en_get_plat_route.gml</script>
+          <script>scripts\en_pathing_controller.gml</script>
+          <script>scripts\get_lowest_node.gml</script>
+          <script>scripts\en_search_graph.gml</script>
+          <script>scripts\en_ground_update_move_status.gml</script>
+        </scripts>
       </scripts>
       <script>scripts\en_init_bbox_dimensions.gml</script>
       <script>scripts\en_ground_initialize.gml</script>
