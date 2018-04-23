@@ -12,7 +12,6 @@ for(i = 0; i < ds_map_size(graph); i++) {
         // If that child doesn't have an entry of its own, we havent' checked it yet
         // That means we're not done.
         if (!ds_map_exists(graph, sub_key)) {
-            show_debug_message("next node to graph: " + string(sub_key));
             return sub_key;
         }
         sub_key = ds_map_find_next(sub_map, sub_key);

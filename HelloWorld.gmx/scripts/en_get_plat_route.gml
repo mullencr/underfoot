@@ -57,7 +57,6 @@ curr_node = player_plat;
 while(curr_node != enemy_plat) {
     ds_list_insert(final_path, 0, curr_node);
     // Store the previous as the next node.
-    show_debug_message("Curr node is : " + string(curr_node));
     curr_node = ds_list_find_value(nodes[? curr_node], 1);
 }
 ds_list_insert(final_path, 0, enemy_plat);

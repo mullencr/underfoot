@@ -33,6 +33,7 @@
     <sprite>sprites\spr_en_air_fly</sprite>
     <sprite>sprites\spr_en_jump</sprite>
     <sprite>sprites\spr_en_fall</sprite>
+    <sprite>sprites\spr_en_range_block</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\white</background>
@@ -67,6 +68,8 @@
       </scripts>
       <script>scripts\en_init_bbox_dimensions.gml</script>
       <script>scripts\en_ground_initialize.gml</script>
+      <script>scripts\en_get_range_block.gml</script>
+      <script>scripts\en_in_range_block.gml</script>
     </scripts>
     <scripts name="en_fly">
       <script>scripts\en_fly_update_move_status.gml</script>
@@ -114,6 +117,7 @@
     <object>objects\obj_frisbee</object>
     <object>objects\obj_player</object>
     <object>objects\obj_music_player</object>
+    <object>objects\obj_en_range_block</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room2</room>

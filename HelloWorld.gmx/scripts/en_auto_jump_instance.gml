@@ -36,6 +36,11 @@ while(!place_meeting(enemy.sub_x, enemy.sub_y, obj_wall) or on_plat) {
        enemy.sub_hsp = 0;
        enemy.sub_dir *= -1;
     }
+    // Account for the range block.
+    if (!en_in_range_block(enemy, enemy.range_block, true)) {
+       enemy.sub_hsp = 0;
+       enemy.sub_dir *= -1;
+    }
     
     // Vertical collision
     if (place_meeting(enemy.sub_x, enemy.sub_y+enemy.sub_vsp, obj_surface_parent) && enemy.sub_vsp < 0) {
@@ -43,13 +48,10 @@ while(!place_meeting(enemy.sub_x, enemy.sub_y, obj_wall) or on_plat) {
             enemy.sub_y += sign(enemy.sub_vsp);
         }
         enemy.sub_vsp = 0;
-        show_debug_message("Vertical collision registered in auto jump");
     }
     
     enemy.sub_x += enemy.sub_hsp;
     enemy.sub_y += enemy.sub_vsp;
-    
-    show_debug_message(string(enemy.sub_x) + "," + string(enemy.sub_y));
     
     // Get the instance that we collide with, if any. Returns noone if there's nothing.
     inst = instance_place(enemy.sub_x, enemy.sub_y, obj_surface_parent);

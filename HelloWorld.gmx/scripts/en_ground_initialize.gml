@@ -6,8 +6,12 @@ hsp = 0;
 jumpspeed = 15;
 original_movespeed = 4;
 movespeed = original_movespeed;
+scared_of_heights = true;
 image_speed = 0.15;
 move_status = move_status.idling;
+
+// For debugging purposes
+lessThan52 = true;
 
 // Store objects to collide to in an array, 
 // so that we can pass by reference later on and reduce processing time.
@@ -15,14 +19,17 @@ arr_collide = array_create(2);
 arr_collide[0] = obj_wall;
 arr_collide[1] = obj_plat;
 
+// Initialize the dimensions for later use
+en_init_bbox_dimensions(self);
+
+// Range block
+range_block = en_get_range_block(self);
+
 // Create the graph
 plat_graph = en_init_graphs(self);
 
 // Initialize route to empty
 route = noone;
-
-// Initialize the dimensions for later use
-en_init_bbox_dimensions(self);
 
 // Do output for humans.
 key = ds_map_find_first(plat_graph);

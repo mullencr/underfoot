@@ -46,6 +46,12 @@ if(instance_number(obj_player) > 0) {
         if(place_meeting(enemy.x, enemy.y+1, obj_surface_parent))
             enemy.move_status = move_status.attacking;
     }
+    
+    with(enemy.range_block) {
+        if (!place_meeting(self.x, self.y, obj_player)) {
+            other.move_status = move_status.idling;
+        }
+    }
 } else {
     // If player doesn't exist, just idle.
     enemy.move_status = move_status.idling;

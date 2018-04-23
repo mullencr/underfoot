@@ -18,33 +18,16 @@ sub_hsp = enemy.hsp;
 pass_limit = 3;
 pass_count = 0;
 while(pass_count < pass_limit) {
-    show_debug_message("looping in ground access");
     // Store prev_x for use later in the script.
     prev_x = sub_x;
     
     en_fake_move(enemy);
     
-    // Print when we pass the start on the left or right
-    if((prev_x >= enemy.x && enemy.x > sub_x)) {
-        show_debug_message("left pass");
-    } else if (prev_x < enemy.x && enemy.x <= sub_x) {
-        show_debug_message("right pass");
-    }
-    
     // Check to see if we pass the origin. If so, increment pass count.
     if((prev_x >= enemy.x && enemy.x > sub_x) || (prev_x < enemy.x && enemy.x <= sub_x)) {
         pass_count++;
     }
-    
-    show_debug_message("curr x,y: " + string(sub_x) + ", " + string(sub_y));
-    show_debug_message("curr jumpseed, hsp, movespeed: " + string(enemy.jumpspeed) + ", " + string(sub_hsp) + ", " + string(enemy.movespeed) + ", " + string(sub_dir));
-    show_debug_message("Instance collision: " + string(instance_place(sub_x+(sub_hsp), sub_y, obj_surface_parent)));
-    if(instance_place(sub_x, sub_y, obj_floor) != noone)
-        show_debug_message("instance top: " + string(instance_place(sub_x, sub_y, obj_floor).y));
-    show_debug_message("en_bot: " + string(enemy.bbox_bottom));
 
-    if(sub_x == 633)
-        show_debug_message("breakpoint");
     // If the horizontal speed is not zero (we've just collided)
     on_plat = place_meeting(enemy.sub_x, enemy.sub_y + 1, obj_surface_parent);
     if(sub_hsp != 0 && on_plat)

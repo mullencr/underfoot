@@ -66,32 +66,42 @@ if(ds_exists(route, ds_type_list)) {
         jump_x = ds_list_find_value(jump_info, 0);
         jump_dir = ds_list_find_value(jump_info, 1);
         
-        // If we hit the jump x & we're on the ground.
-        next_x = enemy.x + enemy.hsp;
-        
-        if((next_x < jump_x && jump_x <= enemy.x)) {
-            show_debug_message("left pass");
-        } else if ((enemy.x <= jump_x && jump_x < next_x)) {
-            show_debug_message("right pass");
-        }
-
-        show_debug_message(string(enemy.x) + "," + string(enemy.y));
-
-        left_pass = (next_x <= jump_x && jump_x <= enemy.x);
-        right_pass = (enemy.x <= jump_x && jump_x <= next_x);
-        if((left_pass || right_pass) && place_meeting(enemy.x, enemy.y+1, obj_surface_parent)) {
-            // Set the x to the jump x to be sure.
-            enemy.x = jump_x;
-            //  if dir is wrong, swap it.
-            if (jump_dir != enemy.dir) {
+        // If we need to walk off the edge, jump_x will be noone.
+        // Otherwise, business as normal.
+        if (jump_x != noone) {
+            // If we hit the jump x & we're on the ground.
+            next_x = enemy.x + enemy.hsp;
+            // Find out if we've passed the jump x    
+            left_pass = (next_x <= jump_x && jump_x <= enemy.x);
+            right_pass = (enemy.x <= jump_x && jump_x <= next_x);
+            if((left_pass || right_pass) && place_meeting(enemy.x, enemy.y+1, obj_surface_parent)) {
+                // Set the x to the jump x to be sure of correct behaviour.
+                enemy.x = jump_x;
+                //  if dir is wrong, swap it.
+                if (jump_dir != enemy.dir) {
+                    enemy.dir *= -1;
+                }
+                enemy.vsp = -enemy.jumpspeed;
+                ds_list_delete(route, 0);
+            } else if(((enemy.x > jump_x && enemy.dir > 0) || (enemy.x < jump_x && enemy.dir < 0)) && place_meeting(enemy.x, enemy.y+1, obj_surface_parent)) {
+                // Move towards the jump_x.
+                // If our current direction points away from the point, switch it.
                 enemy.dir *= -1;
             }
-            enemy.vsp = -enemy.jumpspeed;
-            ds_list_delete(route, 0);
-        } else if(((enemy.x > jump_x && enemy.dir > 0) || (enemy.x < jump_x && enemy.dir < 0)) && place_meeting(enemy.x, enemy.y+1, obj_surface_parent)) {
-            // Move towards the jump_x.
-            // If our current direction points away from the point, switch it.
-            enemy.dir *= -1;
+        } else {
+            // We need to set up the logic to walk off of the edge.
+            // If the direction is incorrect, set it.
+            enemy.dir = jump_dir;
+            // We'll start walking towards the edge. We need to thwart the fear of heights.
+            scared_of_heights = false; // This value is checked in the fear of heights function.
+            // Once we leave the current plat, we need to clean the status.
+            // If we are not on the current platform (in the air or on adjacent
+            inst = instance_place(enemy.x, enemy.y+2, obj_surface_parent);
+            if (inst != curr_plat) {
+                // Delete the first element, reset our fear of heights.
+                ds_list_delete(route, 0);
+                scared_of_heights = true;
+            }
         }
     }
 }
