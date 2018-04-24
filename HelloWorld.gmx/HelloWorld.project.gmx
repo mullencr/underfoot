@@ -57,6 +57,7 @@
           <script>scripts\en_auto_jump_instance.gml</script>
           <script>scripts\get_next_node.gml</script>
           <script>scripts\en_node_walk_off_edge.gml</script>
+          <script>scripts\en_theory_sprite_control.gml</script>
         </scripts>
         <scripts name="runtime">
           <script>scripts\en_get_plat_route.gml</script>
@@ -70,6 +71,7 @@
       <script>scripts\en_ground_initialize.gml</script>
       <script>scripts\en_get_range_block.gml</script>
       <script>scripts\en_in_range_block.gml</script>
+      <script>scripts\en_sprite_control.gml</script>
     </scripts>
     <scripts name="en_fly">
       <script>scripts\en_fly_update_move_status.gml</script>

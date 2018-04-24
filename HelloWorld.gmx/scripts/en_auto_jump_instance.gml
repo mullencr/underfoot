@@ -1,5 +1,6 @@
 ///en_auto_jump_instance(enemy.x, enemy.y, enemy.jumpspeed, enemy.hsp, enemy.dir, enemy.enemy.movespeed, enemy.enemy.grav)
 enemy = argument0;
+tmp_en_spr = enemy.sprite_index;
 
 enemy.orig_sub_vsp = enemy.sub_vsp;
 enemy.orig_sub_hsp = enemy.sub_hsp;
@@ -53,6 +54,8 @@ while(!place_meeting(enemy.sub_x, enemy.sub_y, obj_wall) or on_plat) {
     enemy.sub_x += enemy.sub_hsp;
     enemy.sub_y += enemy.sub_vsp;
     
+    en_theory_sprite_control(self);
+    
     // Get the instance that we collide with, if any. Returns noone if there's nothing.
     inst = instance_place(enemy.sub_x, enemy.sub_y, obj_surface_parent);
     if(inst != noone && ((inst.object_index == obj_plat) || (inst.object_index == obj_floor))) {
@@ -67,6 +70,7 @@ while(!place_meeting(enemy.sub_x, enemy.sub_y, obj_wall) or on_plat) {
             enemy.sub_dir = enemy.orig_sub_dir;
             enemy.sub_x = enemy.orig_sub_x;
             enemy.sub_y = enemy.orig_sub_y;
+            enemy.sprite_index = tmp_en_spr;
             return inst;
         } else {
             // Restore original values (for ground access)
@@ -75,6 +79,7 @@ while(!place_meeting(enemy.sub_x, enemy.sub_y, obj_wall) or on_plat) {
             enemy.sub_dir = enemy.orig_sub_dir;
             enemy.sub_x = enemy.orig_sub_x;
             enemy.sub_y = enemy.orig_sub_y;
+            enemy.sprite_index = tmp_en_spr;
             return noone;
         }
     }
@@ -85,4 +90,5 @@ enemy.sub_hsp = enemy.orig_sub_hsp;
 enemy.sub_dir = enemy.orig_sub_dir;
 enemy.sub_x = enemy.orig_sub_x;
 enemy.sub_y = enemy.orig_sub_y;
+enemy.sprite_index = tmp_en_spr;
 return noone;

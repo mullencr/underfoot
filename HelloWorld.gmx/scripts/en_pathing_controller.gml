@@ -74,7 +74,7 @@ if(ds_exists(route, ds_type_list)) {
             // Find out if we've passed the jump x    
             left_pass = (next_x <= jump_x && jump_x <= enemy.x);
             right_pass = (enemy.x <= jump_x && jump_x <= next_x);
-            if((left_pass || right_pass) && place_meeting(enemy.x, enemy.y+1, obj_surface_parent)) {
+            if((abs(jump_x - enemy.x) < abs(enemy.hsp)) && place_meeting(enemy.x, enemy.y+1, obj_surface_parent)) {
                 // Set the x to the jump x to be sure of correct behaviour.
                 enemy.x = jump_x;
                 //  if dir is wrong, swap it.
