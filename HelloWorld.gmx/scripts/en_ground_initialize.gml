@@ -17,7 +17,7 @@ lessThan52 = true;
 // so that we can pass by reference later on and reduce processing time.
 arr_collide = array_create(2);
 arr_collide[0] = obj_wall;
-arr_collide[1] = obj_plat;
+arr_collide[1] = obj_plat_large;
 
 // Initialize the dimensions for later use
 en_init_bbox_dimensions(self);
@@ -45,7 +45,7 @@ for(i = 0; i < ds_map_size(plat_graph); i++) {
         show_debug_message("        jump_dir: " + string(jump_dir));
         sub_key = ds_map_find_next(sub_map, sub_key);
     }
-    if(key.object_index == obj_plat) {
+    if(key.object_index == obj_plat_large) {
     key.sprite_index = spr_plat_signal;
     } else {
     key.sprite_index = spr_floor_signal;

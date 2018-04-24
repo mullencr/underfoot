@@ -34,6 +34,7 @@
     <sprite>sprites\spr_en_jump</sprite>
     <sprite>sprites\spr_en_fall</sprite>
     <sprite>sprites\spr_en_range_block</sprite>
+    <sprite>sprites\spr_plat_small</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\white</background>
@@ -109,7 +110,7 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_en_ground</object>
     <object>objects\obj_en_parent</object>
-    <object>objects\obj_plat</object>
+    <object>objects\obj_plat_large</object>
     <object>objects\obj_surface_parent</object>
     <object>objects\obj_floor</object>
     <object>objects\obj_signal</object>
@@ -120,6 +121,7 @@
     <object>objects\obj_player</object>
     <object>objects\obj_music_player</object>
     <object>objects\obj_en_range_block</object>
+    <object>objects\obj_plat_small</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room2</room>

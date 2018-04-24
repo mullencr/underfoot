@@ -19,7 +19,7 @@ while(true) {
     en_fake_move(enemy);
     // Once we're off of the platform (in the air), we're moving down.
     // Check to see whether we have plat under us.
-    on_plat = place_meeting(enemy.sub_x, enemy.sub_y + 1, obj_plat);
+    on_plat = place_meeting(enemy.sub_x, enemy.sub_y + 1, obj_plat_large);
     if(!on_plat) {
         // As soon as we don't, set the falling to true.
         falling = true;

@@ -12,7 +12,7 @@ with(obj_player) {
 enemy_plat = instance_place(enemy.x, (enemy.y + 1), obj_surface_parent);
 
 // TODO: REMOVE
-obj_plat.sprite_index = spr_plat;
+obj_plat_large.sprite_index = spr_plat;
 obj_floor.sprite_index = spr_floor;
 
 // Only run the dijkstra's if it can be reached
@@ -26,7 +26,7 @@ if (en_search_graph(enemy.plat_graph, enemy_plat, player_plat)) {
         // Change their color to signal, append our putput
         for(i = 0; i < ds_list_size(route); i++) {
             inst = ds_list_find_value(route, i);
-            if(inst.object_index == obj_plat) {
+            if(inst.object_index == obj_plat_large) {
                 inst.sprite_index = spr_plat_signal;
             } else if (inst.object_index == obj_floor) {
                 inst.sprite_index = spr_floor_signal;

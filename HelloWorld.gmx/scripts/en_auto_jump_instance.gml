@@ -16,7 +16,7 @@ count = 0;
 
 // If we're on a platform, keep going until we hit the ground (i.e. we see a ground instance)
 // This will stay true, so we will continue looping until we hit something.
-on_plat = place_meeting(enemy.sub_x, enemy.sub_y + 1, obj_plat);
+on_plat = place_meeting(enemy.sub_x, enemy.sub_y + 1, obj_plat_large);
 // Until we collide with a wall (or until this method returns if we're on a plat)
 while(!place_meeting(enemy.sub_x, enemy.sub_y, obj_wall) or on_plat) {
     count++;
@@ -58,7 +58,7 @@ while(!place_meeting(enemy.sub_x, enemy.sub_y, obj_wall) or on_plat) {
     
     // Get the instance that we collide with, if any. Returns noone if there's nothing.
     inst = instance_place(enemy.sub_x, enemy.sub_y, obj_surface_parent);
-    if(inst != noone && ((inst.object_index == obj_plat) || (inst.object_index == obj_floor))) {
+    if(inst != noone && ((inst.object_index == obj_plat_large) || (inst.object_index == obj_floor))) {
         // placement_bool is just to take some weight off of the predicate
         // Check the bounding boxes to make sure we land on top, not hit the sides.
         placement_bool = (check_y < (inst).bbox_top) && (check_x > (inst).bbox_left && check_x < (inst).bbox_right);
