@@ -3,7 +3,7 @@ enemy = argument0;
 
 if (hsp != 0) {
     sprite_index = spr_en_walk;
-} else {
+} else if (enemy.move_status != move_status.attacking) {
     sprite_index = spr_en_idle;
 }
 

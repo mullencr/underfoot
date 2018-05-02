@@ -1,9 +1,9 @@
 ///en_get_ground_access(enemy)
-enemy = argument0;
+var enemy = argument0;
 // Store values for later use.
 sub_x = enemy.x;
 sub_y = enemy.y;
-ret = ds_map_create();
+var ret = ds_map_create();
 // Grab some variables. This is me being lazy and not wanting to type "enemy"
 sub_vsp = enemy.vsp;
 sub_dir = enemy.dir;
@@ -15,11 +15,11 @@ sub_hsp = enemy.hsp;
 // instance passed in. Do this for scalability.
 
 // ===================== Default motion ======================
-pass_limit = 3;
-pass_count = 0;
+var pass_limit = 3;
+var pass_count = 0;
 while(pass_count < pass_limit) {
     // Store prev_x for use later in the script.
-    prev_x = sub_x;
+    var prev_x = sub_x;
     
     en_fake_move(enemy);
     
@@ -29,16 +29,16 @@ while(pass_count < pass_limit) {
     }
 
     // If the horizontal speed is not zero (we've just collided)
-    on_plat = place_meeting(enemy.sub_x, enemy.sub_y + 1, obj_surface_parent);
+    var on_plat = place_meeting(enemy.sub_x, enemy.sub_y + 1, obj_surface_parent);
     if(sub_hsp != 0 && on_plat)
         // Run auto_jump, but this script should return the instance.
-        inst = en_auto_jump_instance(enemy);
-    else inst = noone;
-    find = ds_map_find_value(ret, inst);
+        var inst = en_auto_jump_instance(enemy);
+    else var inst = noone;
+    var find = ds_map_find_value(ret, inst);
     // If we don't find the valid instance in theory, add its info to our map
     if(inst != noone && is_undefined(find)) {
         // Make a list that we can return.
-        sub_list = ds_list_create();
+        var sub_list = ds_list_create();
         ds_list_add(sub_list, sub_x, sub_dir);
         ret[? inst] = sub_list;
     }
