@@ -3,13 +3,6 @@
 
 curr_img = self.image_index - (self.image_index % 1);
 
-// If we reach the final frame of the animation, set the status to idle for a second or two.
-if (curr_img == 0)  {
-    rest_count = 21;
-    self.move_status = move_status.idling;
-}
-// TODO: Add check for rest count to update_move_status
-
 // Set sprite here.
 self.sprite_index = spr_en_attack1;
 damage_frame_start = 3;
@@ -39,3 +32,9 @@ if (self.curr_hitbox != noone) {
     // create a hitbox check for collision with player
 }
 
+// If we reach the final frame of the animation, set the status to idle for a second or two.
+if (curr_img == (image_number - 1))  {
+    rest_count = 120;
+    self.move_status = move_status.idling;
+}
+// TODO: Add check for rest count to update_move_status
