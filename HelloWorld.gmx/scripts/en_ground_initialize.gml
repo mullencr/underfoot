@@ -7,11 +7,15 @@ jumpspeed = 15;
 original_movespeed = 4;
 movespeed = original_movespeed;
 scared_of_heights = true;
+rest_count = 0;
+
 image_speed = 0.15;
 move_status = move_status.idling;
 
-// For debugging purposes
-lessThan52 = true;
+// Initialize current hitbox to empty.
+curr_hitbox = noone;
+// Initialize route to empty
+route = noone;
 
 // Store objects to collide to in an array, 
 // so that we can pass by reference later on and reduce processing time.
@@ -27,9 +31,6 @@ range_block = en_get_range_block(self);
 
 // Create the graph
 plat_graph = en_init_graphs(self);
-
-// Initialize route to empty
-route = noone;
 
 // Do output for humans.
 key = ds_map_find_first(plat_graph);

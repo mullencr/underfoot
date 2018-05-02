@@ -14,6 +14,6 @@ if(theory) {
 } else {
     // Run the check with real x values.
     // Get the bounding box coordinates.
-    status = rectangle_in_rectangle(enemy.bbox_left, enemy.bbox_top, enemy.bbox_right, enemy.bbox_bottom, block.bbox_left, block.bbox_top, block.bbox_right, block.bbox_bottom);
+    status = rectangle_in_rectangle((enemy.bbox_left + enemy.hsp), enemy.bbox_top, (enemy.bbox_right + enemy.hsp), enemy.bbox_bottom, block.bbox_left, block.bbox_top, block.bbox_right, block.bbox_bottom);
 }
 return (status == 1);

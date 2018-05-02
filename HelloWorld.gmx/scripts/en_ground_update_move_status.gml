@@ -2,7 +2,6 @@
 enemy = argument0;
 range_atk = 100;
 
-// If we're chasing, run dijkstra's.
 // If we reach the final plat and the player ISNT ON IT, set to idle.
 if(ds_exists(enemy.route, ds_type_list) && is_undefined(enemy.next_plat)) {
     // the next platform isn't defined.
@@ -16,6 +15,7 @@ if(ds_exists(enemy.route, ds_type_list) && is_undefined(enemy.next_plat)) {
 }
 
 if(instance_number(obj_player) > 0) {
+    // To smartly move towards the player:
     with(obj_player) {
         other.player_plat = instance_place(obj_player.x, (obj_player.y + 1), obj_surface_parent);
     }
@@ -47,10 +47,17 @@ if(instance_number(obj_player) > 0) {
             enemy.move_status = move_status.attacking;
     }
     
+    // Return to idle when the player leaves the room.
     with(enemy.range_block) {
         if (!place_meeting(self.x, self.y, obj_player)) {
             other.move_status = move_status.idling;
         }
+    }
+    
+    // If the rest_count is greater than zero, set to idling and decrement.
+    if (enemy.rest_count > 0) {
+        self.move_status = move_status.idling;
+        enemy.rest_count--;
     }
 } else {
     // If player doesn't exist, just idle.

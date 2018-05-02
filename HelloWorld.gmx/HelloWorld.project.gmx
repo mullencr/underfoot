@@ -9,32 +9,45 @@
     <sound>sound\snd_noncombat</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_twit</sprite>
-    <sprite>sprites\spr_en_idle</sprite>
-    <sprite>sprites\spr_plat</sprite>
-    <sprite>sprites\spr_en_signal</sprite>
-    <sprite>sprites\spr_floor</sprite>
-    <sprite>sprites\spr_plat_signal</sprite>
-    <sprite>sprites\spr_floor_signal</sprite>
-    <sprite>sprites\spr_player_idle</sprite>
-    <sprite>sprites\spr_player_jump</sprite>
-    <sprite>sprites\spr_player_roll</sprite>
-    <sprite>sprites\spr_player_run</sprite>
-    <sprite>sprites\spr_frisbee</sprite>
-    <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_player_air_atk</sprite>
-    <sprite>sprites\spr_player_atk</sprite>
-    <sprite>sprites\spr_player_fall</sprite>
-    <sprite>sprites\spr_player_throw</sprite>
-    <sprite>sprites\spr_hitbox_scim_slash</sprite>
-    <sprite>sprites\spr_en_walk</sprite>
-    <sprite>sprites\spr_en_air_idle</sprite>
-    <sprite>sprites\spr_en_air_fly</sprite>
-    <sprite>sprites\spr_en_jump</sprite>
-    <sprite>sprites\spr_en_fall</sprite>
-    <sprite>sprites\spr_en_range_block</sprite>
-    <sprite>sprites\spr_plat_small</sprite>
+    <sprites name="spr_en_ground">
+      <sprite>sprites\spr_en_idle</sprite>
+      <sprite>sprites\spr_en_walk</sprite>
+      <sprite>sprites\spr_en_jump</sprite>
+      <sprite>sprites\spr_en_fall</sprite>
+      <sprite>sprites\spr_hitbox_swing1</sprite>
+    </sprites>
+    <sprites name="testing">
+      <sprite>sprites\spr_en_signal</sprite>
+      <sprite>sprites\spr_twit</sprite>
+    </sprites>
+    <sprites name="environmental">
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_plat</sprite>
+      <sprite>sprites\spr_floor</sprite>
+      <sprite>sprites\spr_floor_signal</sprite>
+      <sprite>sprites\spr_plat_signal</sprite>
+      <sprite>sprites\spr_en_range_block</sprite>
+      <sprite>sprites\spr_plat_small</sprite>
+    </sprites>
+    <sprites name="spr_player">
+      <sprite>sprites\spr_player_idle</sprite>
+      <sprite>sprites\spr_player_roll</sprite>
+      <sprite>sprites\spr_player_jump</sprite>
+      <sprite>sprites\spr_player_run</sprite>
+      <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_player_air_atk</sprite>
+      <sprite>sprites\spr_player_atk</sprite>
+      <sprite>sprites\spr_player_fall</sprite>
+      <sprite>sprites\spr_player_throw</sprite>
+      <sprite>sprites\spr_hitbox_scim_slash</sprite>
+    </sprites>
+    <sprites name="weapons">
+      <sprite>sprites\spr_frisbee</sprite>
+    </sprites>
+    <sprites name="spr_en_air">
+      <sprite>sprites\spr_en_air_fly</sprite>
+      <sprite>sprites\spr_en_air_idle</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\white</background>
@@ -44,9 +57,6 @@
   </paths>
   <scripts name="scripts">
     <scripts name="en_ground">
-      <script>scripts\en_collision.gml</script>
-      <script>scripts\en_auto_jump.gml</script>
-      <script>scripts\en_fear_of_heights.gml</script>
       <scripts name="smart_movement">
         <scripts name="init">
           <script>scripts\en_init_graphs.gml</script>
@@ -65,14 +75,23 @@
           <script>scripts\en_pathing_controller.gml</script>
           <script>scripts\get_lowest_node.gml</script>
           <script>scripts\en_search_graph.gml</script>
-          <script>scripts\en_ground_update_move_status.gml</script>
         </scripts>
       </scripts>
-      <script>scripts\en_init_bbox_dimensions.gml</script>
-      <script>scripts\en_ground_initialize.gml</script>
-      <script>scripts\en_get_range_block.gml</script>
-      <script>scripts\en_in_range_block.gml</script>
-      <script>scripts\en_sprite_control.gml</script>
+      <scripts name="initialize">
+        <script>scripts\en_ground_initialize.gml</script>
+        <script>scripts\en_init_bbox_dimensions.gml</script>
+        <script>scripts\en_get_range_block.gml</script>
+      </scripts>
+      <script>scripts\en_collision.gml</script>
+      <scripts name="en_core">
+        <script>scripts\en_ground_attack_controller.gml</script>
+        <script>scripts\script50.gml</script>
+        <script>scripts\en_sprite_control.gml</script>
+        <script>scripts\en_in_range_block.gml</script>
+        <script>scripts\en_fear_of_heights.gml</script>
+        <script>scripts\en_auto_jump.gml</script>
+        <script>scripts\en_ground_update_move_status.gml</script>
+      </scripts>
     </scripts>
     <scripts name="en_fly">
       <script>scripts\en_fly_update_move_status.gml</script>
@@ -122,6 +141,7 @@
     <object>objects\obj_music_player</object>
     <object>objects\obj_en_range_block</object>
     <object>objects\obj_plat_small</object>
+    <object>objects\hbox_en_ground_swing1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room2</room>

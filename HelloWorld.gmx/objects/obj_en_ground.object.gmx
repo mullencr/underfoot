@@ -83,8 +83,8 @@
             <kind>1</kind>
             <string>///Movement
 en_fear_of_heights(self);
-
-en_ground_update_move_status(self);
+if(self.move_status != move_status.attacking)
+    en_ground_update_move_status(self);
 
 if(self.move_status == move_status.idling) {
     movespeed = 0;
@@ -93,6 +93,7 @@ if(self.move_status == move_status.idling) {
     en_pathing_controller(self);
 } else if (self.move_status == move_status.attacking) {
     movespeed = 0;
+    en_ground_attack_controller();
 }
 
 /// Movement
