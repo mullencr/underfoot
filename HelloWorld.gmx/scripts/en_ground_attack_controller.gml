@@ -1,8 +1,10 @@
 ///en_ground_attack_controller
 // Decide on attack
 
+curr_img = self.image_index - (self.image_index % 1);
+
 // Set sprite here.
-self.sprite_index = spr_en_idle;
+self.sprite_index = spr_en_attack1;
 damage_frame_start = 3;
 damage_frame_end = 6;
 
@@ -13,7 +15,9 @@ if(self.image_index >= damage_frame_start) {
     if(self.curr_hitbox == noone) {
         self.curr_hitbox = instance_create(self.x, self.y, hbox_en_ground_swing1);
     }
-} else if (self.image_index >= damage_frame_end) {
+}
+
+if (self.image_index >= damage_frame_end) {
 // Destroy it on end.
     // Destroy the hitbox instance, set enemy.curr_hitbox to noone.
     if(self.curr_hitbox != noone) {
@@ -28,10 +32,9 @@ if (self.curr_hitbox != noone) {
     // create a hitbox check for collision with player
 }
 
-// If we reach the final frame of the animation, set the status
-// to idle for a second or two.
-if (self.image_index > self.image_number)  {
-    rest_count = 21;
+// If we reach the final frame of the animation, set the status to idle for a second or two.
+if (curr_img == (image_number - 1))  {
+    rest_count = 120;
     self.move_status = move_status.idling;
 }
 // TODO: Add check for rest count to update_move_status

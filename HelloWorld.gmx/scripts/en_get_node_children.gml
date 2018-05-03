@@ -1,6 +1,6 @@
 ///en_get_node_children(enemy, plat)
-enemy = argument0;
-plat = argument1;
+var enemy = argument0;
+var plat = argument1;
 
 //Initialize values.
 
@@ -18,9 +18,9 @@ while(place_meeting(enemy.sub_x, enemy.sub_y, obj_surface_parent)) {
 // enemy.sub_y should now put our duder just above the platform.
 
 // Create the data structure to store the outputs:
-ret = ds_map_create();
+var ret = ds_map_create();
 
-num_turns = 0;
+var num_turns = 0;
 while(num_turns < 3) {
     // =================================== MIMIC MOTION ==============================
     en_fake_move(enemy);
@@ -29,9 +29,9 @@ while(num_turns < 3) {
     // We don't have the origin exactly centered.
     // If we center it in the bounding box as best we can though, it should be fine.
     // Half of the bounding box plus the buffer.
-    check_x = enemy.sub_x + ((enemy.bbox_right + 1 - enemy.bbox_left)/2)*enemy.sub_dir;
-    check_y = plat.y + 2;
-    plat_inst = instance_position(check_x, check_y, obj_surface_parent);
+    var check_x = enemy.sub_x + ((enemy.bbox_right + 1 - enemy.bbox_left)/2)*enemy.sub_dir;
+    var check_y = plat.y + 2;
+    var plat_inst = instance_position(check_x, check_y, obj_surface_parent);
     if(plat_inst == noone) {
         // Increment the num_turns
         //show_debug_message("dir switch");
@@ -43,33 +43,33 @@ while(num_turns < 3) {
     }
     // ================================ END MOTION, RUN THE CHECK  ============================
     // Run the auto jump. Each time we find a valid collision
-    inst = en_auto_jump_instance(enemy);
-    find = ds_map_find_value(ret, inst);
+    var inst = en_auto_jump_instance(enemy);
+    var find = ds_map_find_value(ret, inst);
     if(inst != noone && is_undefined(find)) {
         // Make a list that we can return.
-        enemy.sub_list = ds_list_create();
-        ds_list_add(enemy.sub_list, enemy.sub_x, enemy.sub_dir);
-        ret[? inst] = enemy.sub_list;
+        var sub_list = ds_list_create();
+        ds_list_add(sub_list, enemy.sub_x, enemy.sub_dir);
+        ret[? inst] = sub_list;
     }
 } // End while. We've turned thrice and covered all of the accessible platforms while jumping.
 
 // Now, we need to check the two edges.
-inst_right = en_node_walk_off_edge(plat, 1);
+var inst_right = en_node_walk_off_edge(plat, 1);
 if (inst_right != noone) {
     // add it with a jump_x of noone and an accurate jump dir.
-    enemy.sub_list = ds_list_create();
-    ds_list_add(enemy.sub_list, noone, 1);
+    var sub_list = ds_list_create();
+    ds_list_add(sub_list, noone, 1);
     // NOTE: this will replace an entry in the list from before
     // This is preferred, as these downward jumps were sometimes erroneous.
-    ret[? inst_right] = enemy.sub_list;
+    ret[? inst_right] = sub_list;
 }
 // Reverse the direction and repeat once.
-inst_left = en_node_walk_off_edge(plat, -1);
+var inst_left = en_node_walk_off_edge(plat, -1);
 if (inst_left != noone) {
     // add it with a jump_x of noone and an accurate jump dir.
-    enemy.sub_list = ds_list_create();
-    ds_list_add(enemy.sub_list, noone, -1);
-    ret[? inst_left] = enemy.sub_list;
+    var sub_list = ds_list_create();
+    ds_list_add(sub_list, noone, -1);
+    ret[? inst_left] = sub_list;
 }
 
 

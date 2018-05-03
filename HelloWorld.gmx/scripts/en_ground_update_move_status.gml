@@ -45,6 +45,8 @@ if(instance_number(obj_player) > 0) {
     if (dist <= range_atk && enemy.move_status != move_status.attacking) {
         if(place_meeting(enemy.x, enemy.y+1, obj_surface_parent))
             enemy.move_status = move_status.attacking;
+            enemy.sprite_index = spr_en_attack1;
+            enemy.image_index = 0;
     }
     
     // Return to idle when the player leaves the room.
