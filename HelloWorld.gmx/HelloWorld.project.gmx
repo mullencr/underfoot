@@ -122,6 +122,10 @@
       <script>scripts\playerItemCollision.gml</script>
       <script>scripts\playerInitialize.gml</script>
       <script>scripts\playerRoll.gml</script>
+      <script>scripts\playerDamage.gml</script>
+      <script>scripts\killPlayer.gml</script>
+      <script>scripts\stunPlayer.gml</script>
+      <script>scripts\stunAlarm.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -142,6 +146,7 @@
     <object>objects\obj_en_range_block</object>
     <object>objects\obj_plat_small</object>
     <object>objects\hbox_en_ground_swing1</object>
+    <object>objects\obj_gui_drawer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room2</room>

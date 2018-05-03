@@ -32,3 +32,8 @@ if (collideTerrain(x, y+1)) {
 if (throwing) {
     sprite_index = spr_player_throw;
 }
+
+if (stunned) {
+    sprite_index = spr_player_idle;
+    image_index = 0;
+}
