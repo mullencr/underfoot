@@ -1,3 +1,6 @@
+if (stunned)
+    return 0;
+
 if (!rolling && key_shift ) {
     if (collideTerrain(x, y+1)) {
         rolling = 1;

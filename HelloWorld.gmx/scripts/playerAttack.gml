@@ -1,4 +1,7 @@
 /// playerAttack()
+if (stunned)
+    return 0;
+    
 if (attacking == 0 && key_atk) {
     if (collideTerrain(x, y+1))
         attacking = 1;

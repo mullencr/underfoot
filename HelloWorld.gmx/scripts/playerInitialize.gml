@@ -10,7 +10,7 @@ attacking = 0;
 throwing = 0;
 stunned = false;
 rolling = false;
-inf_frisbees = true;
+inf_frisbees = false;
 has_frisbee = false;
 image_speed = 0.25;
 

@@ -5,6 +5,19 @@ if (move_dir > 0) {
     image_xscale = 0 - abs(image_xscale);
 }
 
+if (sprite_index == spr_player_throw) {
+    if (image_index == 0) { // Throwing ends
+        throwing = 0;
+    } else if (image_index == 3) {
+        fris = instance_create(x + move_dir * 20, y, obj_frisbee);
+        fris.airborne = true;
+        fris.dir = point_direction(x, y, mouse_x, mouse_y);
+        with (fris) {
+            initializeFrisSpeed();
+        }
+    }
+}
+
 if (collideTerrain(x, y+1)) {
     if (rolling) {
         sprite_index = spr_player_roll;
