@@ -37,6 +37,7 @@ move_status = move_status.idling;
 
 movespeed = 5;
 jumpspeed = 8;
+en_health = 40;
 </string>
           </argument>
         </arguments>

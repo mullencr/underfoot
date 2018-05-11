@@ -1,6 +1,6 @@
 ///en_ground_update_move_status(enemy)
 enemy = argument0;
-range_atk = 100;
+range_atk = 240;
 
 // If we reach the final plat and the player ISNT ON IT, set to idle.
 if(ds_exists(enemy.route, ds_type_list) && is_undefined(enemy.next_plat)) {
@@ -43,10 +43,9 @@ if(instance_number(obj_player) > 0) {
     // We can keep the moving towards the player and the closeness attacking.
     dist = point_distance(enemy.x, enemy.y, obj_player.x, obj_player.y);
     if (dist <= range_atk && enemy.move_status != move_status.attacking) {
-        if(place_meeting(enemy.x, enemy.y+1, obj_surface_parent))
-            enemy.move_status = move_status.attacking;
-            enemy.sprite_index = spr_en_attack1;
-            enemy.image_index = 0;
+        enemy.move_status = move_status.attacking;
+        enemy.sprite_index = spr_en_attack1;
+        enemy.image_index = 0;
     }
     
     // Return to idle when the player leaves the room.

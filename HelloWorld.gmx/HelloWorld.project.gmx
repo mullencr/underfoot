@@ -86,12 +86,14 @@
       <script>scripts\en_collision.gml</script>
       <scripts name="en_core">
         <script>scripts\en_ground_attack_controller.gml</script>
-        <script>scripts\script50.gml</script>
+        <script>scripts\en_ground_swing_1.gml</script>
         <script>scripts\en_sprite_control.gml</script>
         <script>scripts\en_in_range_block.gml</script>
         <script>scripts\en_fear_of_heights.gml</script>
         <script>scripts\en_auto_jump.gml</script>
         <script>scripts\en_ground_update_move_status.gml</script>
+        <script>scripts\Step.gml</script>
+        <script>scripts\checkHealth.gml</script>
       </scripts>
     </scripts>
     <scripts name="en_fly">
@@ -110,7 +112,6 @@
       <script>scripts\moveToWallH.gml</script>
       <script>scripts\moveToWallHX.gml</script>
       <script>scripts\moveToWallV.gml</script>
-      <script>scripts\moveToWallVX.gml</script>
       <script>scripts\getPlayerInput.gml</script>
       <script>scripts\collideStairL.gml</script>
       <script>scripts\collideTerrain.gml</script>
@@ -127,6 +128,7 @@
       <script>scripts\stunAlarm.gml</script>
       <script>scripts\reactToInputs.gml</script>
       <script>scripts\playerAttack.gml</script>
+      <script>scripts\moveToWallVX.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

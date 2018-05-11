@@ -8,6 +8,9 @@ original_movespeed = 4;
 movespeed = original_movespeed;
 scared_of_heights = true;
 rest_count = 0;
+en_health = 40;
+
+meleeDamage1 = 10;
 
 image_speed = 0.15;
 move_status = move_status.idling;
