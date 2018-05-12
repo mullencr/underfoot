@@ -12,6 +12,10 @@ if (move_dir > 0) { // Collide with right stairs
 }
 
 if (collideTerrain(x + hsp, y)) {
-    moveToWallH(hsp);
-    hsp = 0;
+    inst = instance_place(x + hsp, y, obj_surface_parent);
+    under_switch = (self.bbox_bottom < inst.y) or !inst.fromUnder;
+    if (under_switch) {
+        moveToWallH(hsp);
+        hsp = 0;
+    }
 } 
