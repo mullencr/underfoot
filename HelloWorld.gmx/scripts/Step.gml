@@ -2,7 +2,7 @@
 
 ///Movement
 en_fear_of_heights(self);
-if(self.move_status != move_status.attacking)
+if(self.move_status != move_status.attacking and self.move_status != move_status.stumbled)
     en_ground_update_move_status(self);
 
 if(self.move_status == move_status.idling) {
@@ -13,6 +13,9 @@ if(self.move_status == move_status.idling) {
 } else if (self.move_status == move_status.attacking) {
     movespeed = 0;
     en_ground_attack_controller(self);
+} else if (self.move_status == move_status.stumbled) {
+    movespeed = 0;
+    en_ground_do_stumble();
 }
 
 /// Movement

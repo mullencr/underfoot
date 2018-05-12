@@ -38,6 +38,7 @@ move_status = move_status.idling;
 movespeed = 5;
 jumpspeed = 8;
 en_health = 40;
+stumble_duration = 120;
 </string>
           </argument>
         </arguments>

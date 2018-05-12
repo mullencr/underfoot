@@ -1,3 +1,4 @@
+///en_ground_swing_2
 ///en_ground_swing_1(enemy)
 enemy = argument0;
 
@@ -49,14 +50,8 @@ if (self.curr_hitbox != noone) {
 
 // If we reach the final frame of the animation, set the status to idle for a second or two.
 if (curr_img == (image_number - 1))  {
-    if (has_hit) {
-        enemy.swing_index = 2;
-        self.image_index = 0;
-        rest_count += 120;
-    } else {
-        has_hit = false;
-        enemy.swing_index = 0;
-        rest_count = 120;
-        self.move_status = move_status.idling;
-    }
+    enemy.swing_index = 0;
+    rest_count += 120;
+    self.move_status = move_status.idling;
+    has_hit = false;
 }

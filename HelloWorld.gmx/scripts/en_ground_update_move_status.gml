@@ -46,6 +46,7 @@ if(instance_number(obj_player) > 0) {
         enemy.move_status = move_status.attacking;
         enemy.sprite_index = spr_en_attack1;
         enemy.image_index = 0;
+        enemy.swing_index = 1;
     }
     
     // Return to idle when the player leaves the room.
