@@ -17,6 +17,7 @@
       <sprite>sprites\spr_hitbox_swing1</sprite>
       <sprite>sprites\spr_en_attack1</sprite>
       <sprite>sprites\spr_en_stumble</sprite>
+      <sprite>sprites\spr_en_ground_stumble</sprite>
     </sprites>
     <sprites name="testing">
       <sprite>sprites\spr_en_signal</sprite>
@@ -49,6 +50,7 @@
     <sprites name="spr_en_air">
       <sprite>sprites\spr_en_air_fly</sprite>
       <sprite>sprites\spr_en_air_idle</sprite>
+      <sprite>sprites\spr_energy_ball</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -58,50 +60,6 @@
     <path>paths\pth_test</path>
   </paths>
   <scripts name="scripts">
-    <scripts name="en_ground">
-      <scripts name="smart_movement">
-        <scripts name="init">
-          <script>scripts\en_init_graphs.gml</script>
-          <script>scripts\en_get_ground_access.gml</script>
-          <script>scripts\en_get_ground_instance.gml</script>
-          <script>scripts\en_get_node_children.gml</script>
-          <script>scripts\en_fake_move.gml</script>
-          <script>scripts\en_theory_collision.gml</script>
-          <script>scripts\en_auto_jump_instance.gml</script>
-          <script>scripts\get_next_node.gml</script>
-          <script>scripts\en_node_walk_off_edge.gml</script>
-          <script>scripts\en_theory_sprite_control.gml</script>
-        </scripts>
-        <scripts name="runtime">
-          <script>scripts\en_get_plat_route.gml</script>
-          <script>scripts\en_pathing_controller.gml</script>
-          <script>scripts\get_lowest_node.gml</script>
-          <script>scripts\en_search_graph.gml</script>
-        </scripts>
-      </scripts>
-      <scripts name="initialize">
-        <script>scripts\en_ground_initialize.gml</script>
-        <script>scripts\en_init_bbox_dimensions.gml</script>
-        <script>scripts\en_get_range_block.gml</script>
-      </scripts>
-      <script>scripts\en_collision.gml</script>
-      <scripts name="en_core">
-        <script>scripts\en_ground_attack_controller.gml</script>
-        <script>scripts\en_ground_swing_1.gml</script>
-        <script>scripts\en_sprite_control.gml</script>
-        <script>scripts\en_in_range_block.gml</script>
-        <script>scripts\en_fear_of_heights.gml</script>
-        <script>scripts\en_auto_jump.gml</script>
-        <script>scripts\en_ground_update_move_status.gml</script>
-        <script>scripts\Step.gml</script>
-        <script>scripts\checkHealth.gml</script>
-        <script>scripts\en_ground_swing_2.gml</script>
-        <script>scripts\en_ground_do_stumble.gml</script>
-      </scripts>
-    </scripts>
-    <scripts name="en_fly">
-      <script>scripts\en_fly_update_move_status.gml</script>
-    </scripts>
     <script>scripts\applyGrav.gml</script>
     <script>scripts\frisbeeCreate.gml</script>
     <script>scripts\frisbeeStep.gml</script>
@@ -134,6 +92,58 @@
       <script>scripts\playerAttack.gml</script>
       <script>scripts\moveToWallVX.gml</script>
     </scripts>
+    <scripts name="en_group">
+      <scripts name="en_ground">
+        <scripts name="smart_movement">
+          <scripts name="init">
+            <script>scripts\en_init_graphs.gml</script>
+            <script>scripts\en_get_ground_access.gml</script>
+            <script>scripts\en_get_ground_instance.gml</script>
+            <script>scripts\en_get_node_children.gml</script>
+            <script>scripts\en_fake_move.gml</script>
+            <script>scripts\en_theory_collision.gml</script>
+            <script>scripts\en_auto_jump_instance.gml</script>
+            <script>scripts\get_next_node.gml</script>
+            <script>scripts\en_node_walk_off_edge.gml</script>
+            <script>scripts\en_theory_sprite_control.gml</script>
+          </scripts>
+          <scripts name="runtime">
+            <script>scripts\en_get_plat_route.gml</script>
+            <script>scripts\en_ground_pathing_controller.gml</script>
+            <script>scripts\get_lowest_node.gml</script>
+            <script>scripts\en_search_graph.gml</script>
+          </scripts>
+        </scripts>
+        <scripts name="initialize">
+          <script>scripts\en_ground_initialize.gml</script>
+        </scripts>
+        <scripts name="en_ground_core">
+          <script>scripts\en_ground_attack_controller.gml</script>
+          <script>scripts\en_ground_swing_1.gml</script>
+          <script>scripts\en_ground_sprite_control.gml</script>
+          <script>scripts\en_fear_of_heights.gml</script>
+          <script>scripts\en_auto_jump.gml</script>
+          <script>scripts\en_ground_update_move_status.gml</script>
+          <script>scripts\GroundStep.gml</script>
+          <script>scripts\en_ground_swing_2.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="en_fly">
+        <script>scripts\en_fly_update_move_status.gml</script>
+        <script>scripts\en_fly_move_controller.gml</script>
+        <script>scripts\en_fly_sprite_control.gml</script>
+        <script>scripts\en_fly_shoot.gml</script>
+        <script>scripts\en_fly_hook.gml</script>
+        <script>scripts\en_fly_init.gml</script>
+        <script>scripts\AirStep.gml</script>
+      </scripts>
+      <script>scripts\en_init_bbox_dimensions.gml</script>
+      <script>scripts\en_get_range_block.gml</script>
+      <script>scripts\en_stumble.gml</script>
+      <script>scripts\en_collision.gml</script>
+      <script>scripts\en_in_range_block.gml</script>
+      <script>scripts\checkHealth.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_en_fly</object>
@@ -154,6 +164,7 @@
     <object>objects\obj_plat_small</object>
     <object>objects\hbox_en_ground_swing1</object>
     <object>objects\obj_gui_drawer</object>
+    <object>objects\obj_en_projectile</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room2</room>

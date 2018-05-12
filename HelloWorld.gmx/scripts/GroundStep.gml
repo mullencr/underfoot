@@ -9,13 +9,13 @@ if(self.move_status == move_status.idling) {
     movespeed = 0;
 } else if (self.move_status == move_status.chasing) {
     movespeed = original_movespeed;
-    en_pathing_controller(self);
+    en_ground_pathing_controller(self);
 } else if (self.move_status == move_status.attacking) {
     movespeed = 0;
     en_ground_attack_controller(self);
 } else if (self.move_status == move_status.stumbled) {
     movespeed = 0;
-    en_ground_do_stumble();
+    en_stumble(spr_en_ground_stumble);
 }
 
 /// Movement
@@ -25,6 +25,6 @@ en_collision(self);
 enemy.x += enemy.hsp;
 enemy.y += enemy.vsp;
 
-en_sprite_control(self);
+en_ground_sprite_control(self);
 
 checkHealth();
