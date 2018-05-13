@@ -154,6 +154,7 @@
     <instance objName="obj_plat_small" x="1728" y="320" name="inst_6C1B6146" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_en_range_block" x="0" y="0" name="inst_740EF3E7" locked="0" code="" scaleX="2.26976752281189" scaleY="1.75087308883667" colour="4294967295" rotation="0"/>
     <instance objName="obj_gui_drawer" x="-64" y="960" name="inst_429D768B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pause" x="-96" y="960" name="inst_108EDB54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

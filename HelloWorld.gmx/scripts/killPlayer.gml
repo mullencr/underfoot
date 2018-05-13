@@ -1,2 +1,2 @@
 // Kills the player
-instance_destroy();
+room_goto(rm_end);
