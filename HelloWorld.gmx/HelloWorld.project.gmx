@@ -54,9 +54,16 @@
       <sprite>sprites\spr_en_air_blast</sprite>
       <sprite>sprites\spr_energy_explode</sprite>
     </sprites>
+    <sprites name="gui">
+      <sprite>sprites\spr_start_button</sprite>
+      <sprite>sprites\spr_start_pressed</sprite>
+      <sprite>sprites\spr_heart</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\background1</background>
     <background>background\white</background>
+    <background>background\bluebackground</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_test</path>
@@ -171,10 +178,14 @@
     <object>objects\hbox_en_ground_swing1</object>
     <object>objects\obj_gui_drawer</object>
     <object>objects\obj_en_projectile</object>
+    <object>objects\obj_start_button</object>
+    <object>objects\obj_view_manager</object>
+    <object>objects\obj_heart</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room2</room>
-    <room>rooms\room1</room>
+    <room>rooms\rm_start</room>
+    <room>rooms\rm_main</room>
+    <room>rooms\rm_end</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

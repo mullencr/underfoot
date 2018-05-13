@@ -1,5 +1,5 @@
 /// playerInitialize()
-hp = 100;
+hp = 300;
 grav = 0.3;
 hsp = 0;
 vsp = 0;
