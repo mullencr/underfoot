@@ -10,6 +10,8 @@ h_accel = 0.75;
 h_decel = 0.5;
 MAX_FALLSPD = 100;
 BOUNCE_SPD = 17;
+STUN_HSP = 4;
+STUN_VSP = 4;
 
 attacking = 0;
 throwing = 0;
