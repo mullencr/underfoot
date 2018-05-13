@@ -185,6 +185,7 @@
     <object>objects\obj_start_button</object>
     <object>objects\obj_view_manager</object>
     <object>objects\obj_heart</object>
+    <object>objects\obj_pause</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
