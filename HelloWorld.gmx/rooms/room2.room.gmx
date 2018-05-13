@@ -153,6 +153,9 @@
     <instance objName="obj_plat_small" x="1312" y="160" name="inst_BD31DFCA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_plat_small" x="1728" y="320" name="inst_6C1B6146" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_en_range_block" x="0" y="0" name="inst_740EF3E7" locked="0" code="" scaleX="2.26976752281189" scaleY="1.75087308883667" colour="4294967295" rotation="0"/>
+    <instance objName="obj_djump_pwrup" x="1792" y="256" name="inst_18C0541F" locked="0" code="" scaleX="0.155913978815079" scaleY="0.136752143502235" colour="4294967295" rotation="0"/>
+    <instance objName="obj_en_fly" x="768" y="544" name="inst_4D7F68F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_en_fly" x="1088" y="96" name="inst_8FCE22D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

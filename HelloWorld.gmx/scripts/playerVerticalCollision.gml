@@ -1,13 +1,14 @@
 /// playerVerticalCollision()
-if (collideTerrain(x, y + vsp)) {
+if (true) {
     if (vsp < 0) {
-        if (place_meeting(x, y, obj_plat_small)) {
+        if (place_meeting(x, y+vsp, obj_plat_small)) {
             in_block = true;
         }
     } 
     
     if (in_block) {
-        if (not place_meeting(x, y, obj_plat_small))
+        if (not place_meeting(x, y+vsp, obj_plat_small) and
+            not place_meeting(x, y, obj_plat_small))
             in_block = false
     } else {
         if (place_meeting(x, y + vsp, obj_plat_small)) {

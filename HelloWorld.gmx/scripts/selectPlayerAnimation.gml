@@ -9,7 +9,7 @@ if (sprite_index == spr_player_throw) {
     if (image_index == 0) { // Throwing ends
         throwing = 0;
     } else if (image_index == 3) {
-        fris = instance_create(x + sign(dir) * 20, y, obj_frisbee);
+        fris = instance_create(x + sign(dir) * 25, y, obj_frisbee);
         fris.airborne = true;
         fris.dir = point_direction(x, y, mouse_x, mouse_y);
         with (fris) {
@@ -47,6 +47,5 @@ if (throwing) {
 }
 
 if (stunned) {
-    sprite_index = spr_player_idle;
-    image_index = 0;
+    sprite_index = spr_player_hurt;
 }

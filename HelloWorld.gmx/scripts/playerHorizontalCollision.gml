@@ -12,8 +12,12 @@ if (dir == DIR_RIGHT) { // Collide with right stairs
     }
 }
 */
-
-if (collideTerrain(x + hsp, y)) {
+if (in_block) {
+    if (collideSolidTerrain(x+hsp, y)) {
+        moveToWallH(hsp);
+        hsp = 0;
+    }
+} else if (collideTerrain(x + hsp, y)) {
     inst = instance_place(x + hsp, y, obj_surface_parent);
     moveToWallH(hsp);
     hsp = 0;

@@ -1,5 +1,5 @@
 /// reactToInputs()
-if (stunned) {
+if (stunned || throwing) {
     return 0;
 }
 
