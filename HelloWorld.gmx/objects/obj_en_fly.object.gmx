@@ -25,27 +25,41 @@
       </action>
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///InitPath
-movespeed = 2;
-range_spot = 300;
-range_atk = 100;
-image_speed = 0.1;
-path_start(pth_test, movespeed, path_action_continue, false);
-</string>
+            <kind>9</kind>
+            <script>en_fly_init</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -53,71 +67,41 @@ path_start(pth_test, movespeed, path_action_continue, false);
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///MoveController
-if (instance_number(obj_player) &gt; 0) {
-
-    en_fly_update_move_status(self, obj_player, self.range_spot, self.range_atk);
-    
-    if (self.move_status == move_status.chasing) {
-        move_towards_point(obj_player.x, obj_player.y, movespeed);
-    } else if (self.move_status == move_status.attacking) {
-        self.speed = 0;
-    }
-
-    sprite_index = spr_en_air_fly;
-}
-else 
-    sprite_index = spr_en_air_idle;
-</string>
+            <kind>9</kind>
+            <script>AirStep</script>
           </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///SpriteControl
-if (instance_number(obj_player) &gt; 0) {
-
-    en_fly_update_move_status(self, obj_player, self.range_spot, self.range_atk);
-    
-    if (self.move_status == move_status.chasing) {
-        move_towards_point(obj_player.x, obj_player.y, movespeed);
-    } else if (self.move_status == move_status.attacking) {
-        self.speed = 0;
-    }
-
-    sprite_index = spr_en_air_fly;
-}
-else 
-    sprite_index = spr_en_air_idle;
-</string>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>

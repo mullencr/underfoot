@@ -42,10 +42,11 @@ if(instance_number(obj_player) > 0) {
     
     // We can keep the moving towards the player and the closeness attacking.
     dist = point_distance(enemy.x, enemy.y, obj_player.x, obj_player.y);
-    if (dist <= range_atk && enemy.move_status != move_status.attacking) {
+    if (rest_count <= 0 && dist <= range_atk && enemy.move_status != move_status.attacking) {
         enemy.move_status = move_status.attacking;
         enemy.sprite_index = spr_en_attack1;
         enemy.image_index = 0;
+        enemy.swing_index = 1;
     }
     
     // Return to idle when the player leaves the room.
@@ -57,7 +58,7 @@ if(instance_number(obj_player) > 0) {
     
     // If the rest_count is greater than zero, set to idling and decrement.
     if (enemy.rest_count > 0) {
-        self.move_status = move_status.idling;
+        // self.move_status = move_status.idling;
         enemy.rest_count--;
     }
 } else {

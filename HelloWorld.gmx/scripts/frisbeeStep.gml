@@ -14,6 +14,17 @@ if (airborne) {
         hsp = 0;
         vsp = 0;
     }
+    // Added by charles
+    // If the frisbee hits an enemy, call stun on that enemy.
+    inst = instance_place(x, y, obj_en_parent) 
+    if (inst != noone) {
+        // We have hit an enemy
+        stunEnemy(inst);
+        airborne = false;
+        image_speed = 0;
+        hsp = 0;
+        vsp = 0;
+    }
     
     applyGrav();
 } else {

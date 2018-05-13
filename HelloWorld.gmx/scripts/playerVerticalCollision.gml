@@ -27,6 +27,7 @@ if (collideTerrain(x, y + vsp)) {
     with (inst) {
         w = self.y;
         under = (other.bbox_bottom < self.y);
+        // The following line is so we can observe "under" in the debugger
         sub = x + y;
     }
     under_switch = (self.bbox_bottom < inst.y) or !inst.fromUnder;

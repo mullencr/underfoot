@@ -9,6 +9,8 @@ movespeed = original_movespeed;
 scared_of_heights = true;
 rest_count = 0;
 en_health = 40;
+swing_index = 0;
+has_hit = false;
 
 meleeDamage1 = 10;
 
