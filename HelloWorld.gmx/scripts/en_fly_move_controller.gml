@@ -3,12 +3,14 @@ if (instance_number(obj_player) > 0) {
     
     dist = point_distance(self.x, self.y, obj_player.x, obj_player.y);
     
-    if (self.move_status != move_status.attacking and self.move_status != move_status.stumbled)
+    if (self.move_status != move_status.stumbled)
         en_fly_update_move_status(self, dist, self.range_shoot, self.range_spot, self.range_atk);
     
     if (self.move_status == move_status.chasing) {
+        show_debug_message("enemy is CHASING");
         move_towards_point(obj_player.x, obj_player.y, movespeed);
     } else if (self.move_status == move_status.attacking) {
+        speed = 0;
         if(dist >= self.range_spot) {
             en_fly_shoot();
         } else {

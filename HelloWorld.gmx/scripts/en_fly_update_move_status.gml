@@ -7,6 +7,8 @@ range_atk = argument4;
 if (range_spot < dist && dist <= range_shoot && move_status != move_status.attacking) {
     path_end();
     speed = 0;
+    self.sprite_index = spr_en_air_blast;
+    image_index = 0;
     enemy.move_status = move_status.attacking;
 } else if (range_atk < dist && dist <= range_spot && enemy.move_status != move_status.chasing) {
     path_end();
@@ -15,6 +17,7 @@ if (range_spot < dist && dist <= range_shoot && move_status != move_status.attac
 } else if (dist <= range_atk && enemy.move_status != move_status.attacking) {
     path_end();
     speed = 0;
+    image_index = 0;
     enemy.move_status = move_status.attacking;
 }
 /* else if (!in_range && enemy.move_status != move_status.idling) {

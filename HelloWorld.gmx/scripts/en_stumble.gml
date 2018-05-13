@@ -10,5 +10,7 @@ if (stumble_count <= 0) {
     self.move_status = move_status.idling;
 }
 
+show_debug_message("enemy is STUMBLED");
+
 
 

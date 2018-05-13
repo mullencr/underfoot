@@ -51,6 +51,8 @@
       <sprite>sprites\spr_en_air_fly</sprite>
       <sprite>sprites\spr_en_air_idle</sprite>
       <sprite>sprites\spr_energy_ball</sprite>
+      <sprite>sprites\spr_en_air_blast</sprite>
+      <sprite>sprites\spr_energy_explode</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -136,6 +138,10 @@
         <script>scripts\en_fly_hook.gml</script>
         <script>scripts\en_fly_init.gml</script>
         <script>scripts\AirStep.gml</script>
+        <scripts name="projectile">
+          <script>scripts\checkProjCollision.gml</script>
+          <script>scripts\do_explode.gml</script>
+        </scripts>
       </scripts>
       <script>scripts\en_init_bbox_dimensions.gml</script>
       <script>scripts\en_get_range_block.gml</script>

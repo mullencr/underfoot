@@ -5,6 +5,12 @@ if (not busy) {
         sprite_index = spr_en_air_fly;
     else 
         sprite_index = spr_en_air_idle;
+} else {
+    dir = point_direction(x, y, obj_player.x, obj_player.y);
+    if (90 < dir and dir < 270)
+        image_xscale = abs(image_xscale);
+    else
+        image_xscale = abs(image_xscale);
 }
         
 if (90 < direction and direction < 270)
