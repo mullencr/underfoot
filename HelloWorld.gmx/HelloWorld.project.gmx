@@ -106,7 +106,6 @@
     <script>scripts\attackCollision.gml</script>
     <script>scripts\collideStairR.gml</script>
     <scripts name="player">
-      <script>scripts\playerStep.gml</script>
       <script>scripts\playerEnemyCollision.gml</script>
       <script>scripts\playerHorizontalCollision.gml</script>
       <script>scripts\moveToWallH.gml</script>
@@ -116,7 +115,6 @@
       <script>scripts\collideStairL.gml</script>
       <script>scripts\collideTerrain.gml</script>
       <script>scripts\updatePlayerPosition.gml</script>
-      <script>scripts\selectPlayerAnimation.gml</script>
       <script>scripts\playerVerticalCollision.gml</script>
       <script>scripts\playerJump.gml</script>
       <script>scripts\playerItemCollision.gml</script>
@@ -129,6 +127,9 @@
       <script>scripts\reactToInputs.gml</script>
       <script>scripts\playerAttack.gml</script>
       <script>scripts\moveToWallVX.gml</script>
+      <script>scripts\playerStep.gml</script>
+      <script>scripts\selectPlayerAnimation.gml</script>
+      <script>scripts\collideSolidTerrain.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

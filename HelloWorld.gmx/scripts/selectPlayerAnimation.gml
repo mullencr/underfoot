@@ -1,7 +1,7 @@
 /// selectPlayerAnimation()
-if (move_dir > 0) {
+if (dir == DIR_RIGHT) {
     image_xscale = 0 + abs(image_xscale);
-} else if (move_dir < 0) {
+} else if (dir == DIR_LEFT) {
     image_xscale = 0 - abs(image_xscale);
 }
 
@@ -9,7 +9,7 @@ if (sprite_index == spr_player_throw) {
     if (image_index == 0) { // Throwing ends
         throwing = 0;
     } else if (image_index == 3) {
-        fris = instance_create(x + move_dir * 20, y, obj_frisbee);
+        fris = instance_create(x + sign(dir) * 20, y, obj_frisbee);
         fris.airborne = true;
         fris.dir = point_direction(x, y, mouse_x, mouse_y);
         with (fris) {
@@ -24,7 +24,7 @@ if (collideTerrain(x, y+1)) {
     }
     else if (attacking) {
         sprite_index = spr_player_atk;
-    } else if (move_dir != 0) {
+    } else if (hsp != 0) {
         sprite_index = spr_player_run;
     } else {
         sprite_index = spr_player_idle;
