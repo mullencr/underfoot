@@ -150,12 +150,19 @@
         <script>scripts\en_fly_move_controller.gml</script>
         <script>scripts\en_fly_sprite_control.gml</script>
         <script>scripts\en_fly_shoot.gml</script>
+        <script>scripts\en_hook_blast.gml</script>
         <script>scripts\en_fly_hook.gml</script>
         <script>scripts\en_fly_init.gml</script>
         <script>scripts\AirStep.gml</script>
         <scripts name="projectile">
           <script>scripts\checkProjCollision.gml</script>
           <script>scripts\do_explode.gml</script>
+        </scripts>
+        <scripts name="hook">
+          <script>scripts\clean_instances.gml</script>
+          <script>scripts\manage_chains.gml</script>
+          <script>scripts\snag_player.gml</script>
+          <script>scripts\hook_self_destruct.gml</script>
         </scripts>
       </scripts>
       <script>scripts\en_init_bbox_dimensions.gml</script>
