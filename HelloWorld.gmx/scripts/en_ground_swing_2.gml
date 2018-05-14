@@ -39,9 +39,10 @@ if (self.curr_hitbox != noone) {
         enemy = other.enemy;
         if (place_meeting(self.x, self.y, obj_player)) {
             // It's a hit!
+            var my_x = self.x;
             with (obj_player) {
                 enemy = other.enemy;
-                playerDamage(enemy.meleeDamage1);
+                playerDamage(enemy.meleeDamage1, my_x);
                 enemy.has_hit = true;
             }
         }

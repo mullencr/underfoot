@@ -156,6 +156,7 @@
     <instance objName="obj_pause" x="-96" y="960" name="inst_108EDB54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_en_ground" x="1536" y="1344" name="inst_55538BA9" locked="0" code="" scaleX="0.76441103219986" scaleY="0.727999985218048" colour="4294967295" rotation="0"/>
     <instance objName="obj_en_range_block" x="0" y="0" name="inst_4D11307A" locked="0" code="" scaleX="2.30697679519653" scaleY="1.74883723258972" colour="4294967295" rotation="0"/>
+    <instance objName="obj_djump_pwrup" x="1792" y="256" name="inst_A82100F9" locked="0" code="" scaleX="0.327956974506378" scaleY="0.136752143502235" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
