@@ -46,6 +46,8 @@
     </sprites>
     <sprites name="weapons">
       <sprite>sprites\spr_frisbee</sprite>
+      <sprite>sprites\spr_hook</sprite>
+      <sprite>sprites\spr_chain_link</sprite>
     </sprites>
     <sprites name="spr_en_air">
       <sprite>sprites\spr_en_air_fly</sprite>
@@ -53,6 +55,9 @@
       <sprite>sprites\spr_energy_ball</sprite>
       <sprite>sprites\spr_en_air_blast</sprite>
       <sprite>sprites\spr_energy_explode</sprite>
+      <sprite>sprites\spr_en_air_hook_throw</sprite>
+      <sprite>sprites\spr_en_air_hook_hold</sprite>
+      <sprite>sprites\spr_en_air_hook_blast</sprite>
     </sprites>
     <sprites name="gui">
       <sprite>sprites\spr_start_button</sprite>
@@ -182,6 +187,8 @@
     <object>objects\obj_view_manager</object>
     <object>objects\obj_heart</object>
     <object>objects\obj_pause</object>
+    <object>objects\obj_en_hook</object>
+    <object>objects\obj_link</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
