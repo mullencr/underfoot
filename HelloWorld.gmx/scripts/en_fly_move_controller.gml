@@ -2,7 +2,7 @@
 if (instance_number(obj_player) > 0) {
     
     dist = point_distance(self.x, self.y, obj_player.x, obj_player.y);
-    
+    show_debug_message("speed: " + string(self.speed));
     if (self.move_status != move_status.stumbled)
         en_fly_update_move_status(self, dist, self.range_shoot, self.range_spot, self.range_atk);
     

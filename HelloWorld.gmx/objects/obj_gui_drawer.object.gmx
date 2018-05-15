@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -27,11 +27,53 @@
             <kind>1</kind>
             <string>self.surf = surface_create(view_wview[0], view_hview[0]);
 
-num_hearts = 10;
-total = obj_player.hp;
-heart_val = total/num_hearts;
-xscale = 2;
-yscale = 2;
+num_hearts = 5;
+if (room == rm_main) {
+    total = obj_player.hp;
+    heart_val = total/num_hearts;
+}
+heart_xscale = 2;
+heart_yscale = 2;
+
+if (room == rm_start) {
+    create_start_gui();
+} else if (room == rm_end) {
+    create_end_gui();
+} else if (room == rm_main) {
+    create_main_gui();
+}
+
+scroll_image_number = 3;
+scroll_image_index = 0;
+scroll_image_speed = 0.15;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///step
+if(room == rm_main) {
+    gui_rm_main_step();
+} else if (room == rm_end) {
+    gui_rm_end_step();
+}
 </string>
           </argument>
         </arguments>
@@ -62,39 +104,8 @@ surface_set_target(self.surf);
 // Clear surface
 draw_clear_alpha(c_white, 0);
 
-if (instance_exists(obj_player)) {
-    // Draw the hearts
-    current_hp = obj_player.hp;
-    
-    num_full = (current_hp/heart_val) - ((current_hp/heart_val)%1);
-    partial_heart_val = current_hp % heart_val;
-    
-    for (var i = 0; i &lt; num_hearts; i++) {
-        if (i &lt; num_full) {
-            // draw full
-            x_val = (32 + (i * sprite_get_width(spr_heart) * xscale) + (3 * xscale));
-            draw_sprite_ext(spr_heart, 0, x_val, 32, xscale, yscale, 0, c_white, 1);
-        } else if (i == num_full) {
-            // draw partial
-            if (partial_heart_val == 0) {
-                img_ind = 3;
-            } else if (partial_heart_val &lt; (heart_val/2)) {
-                img_ind = 2;
-            } else {
-                img_ind = 1;
-            }
-            x_val = (32 + (i * sprite_get_width(spr_heart) * xscale) + (3 * xscale));
-            draw_sprite_ext(spr_heart, img_ind, x_val, 32, xscale, yscale, 0, c_white, 1);
-        } else {
-            // draw empty
-            x_val = (32 + (i * sprite_get_width(spr_heart) * xscale) + (3 * xscale));
-            draw_sprite_ext(spr_heart, 3, x_val, 32, xscale, yscale, 0, c_white, 1);
-        }
-    }
-    
-    draw_text(32, 100, "player_health: " + string(obj_player.hp));
-    draw_text(32, 140, "partial_heart_val: " + string(partial_heart_val));
-    draw_text(32, 180, "heart_val: " + string(heart_val));
+if (room == rm_main) {
+    draw_main_gui();
 }
 
 // Reset the target to screen

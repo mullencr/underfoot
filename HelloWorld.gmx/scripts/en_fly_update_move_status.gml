@@ -20,6 +20,13 @@ if (range_spot < dist && dist <= range_shoot && move_status != move_status.attac
     image_index = 0;
     enemy.move_status = move_status.attacking;
 }
+
+// Return to idle when the player leaves the room.
+with(self.range_block) {
+    if (!place_meeting(self.x, self.y, obj_player)) {
+        other.move_status = move_status.idling;
+    }
+}
 /* else if (!in_range && enemy.move_status != move_status.idling) {
     path_start(pth_test, movespeed, path_action_continue, false);
     enemy.move_status = move_status.idling;
