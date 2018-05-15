@@ -37,6 +37,8 @@
       <sprite>sprites\spr_floor_moss</sprite>
       <sprite>sprites\spr_floor_end</sprite>
       <sprite>sprites\spr_floor_tile</sprite>
+      <sprite>sprites\spr_block</sprite>
+      <sprite>sprites\spr_large_pillar</sprite>
     </sprites>
     <sprites name="spr_player">
       <sprite>sprites\spr_player_idle</sprite>
@@ -216,6 +218,8 @@
       <object>objects\obj_stair_l</object>
       <object>objects\obj_stair_r</object>
       <object>objects\obj_surface_parent</object>
+      <object>objects\wall_fill</object>
+      <object>objects\obj_thick_pillar</object>
     </objects>
     <objects name="obj_gui">
       <object>objects\obj_game_over</object>
@@ -244,11 +248,13 @@
       <object>objects\obj_player</object>
       <object>objects\obj_en_parent</object>
     </objects>
+    <object>objects\obj_door</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
     <room>rooms\rm_main</room>
     <room>rooms\rm_end</room>
+    <room>rooms\rm_main_old</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

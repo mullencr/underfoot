@@ -3,6 +3,9 @@
 with(obj_player) {
     other.block = en_get_range_block(obj_player);
 }
+
+show_debug_message("current_room: " + room_get_name(room));
+
 // Make the view like 50% of the view.
 if (block != noone) {
     //get the height
