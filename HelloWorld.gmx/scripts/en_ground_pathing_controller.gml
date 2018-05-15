@@ -19,7 +19,7 @@ if (en_search_graph(enemy.plat_graph, enemy_plat, player_plat)) {
         // Get the list of destinations
         output = "path: ";
         route = en_get_plat_route(enemy.plat_graph, enemy_plat, player_plat);
-        // Change their color to signal, append our putput
+        // append our putput
         for(i = 0; i < ds_list_size(route); i++) {
             inst = ds_list_find_value(route, i);
             output += string(inst) + ", "
@@ -32,6 +32,7 @@ if (en_search_graph(enemy.plat_graph, enemy_plat, player_plat)) {
 if(ds_exists(route, ds_type_list)) {
     // If dijkstra's ran, we can make them follow the path.
     // Route should always start with current plat.
+    // Will need curr and start
     curr_plat = ds_list_find_value(route, 0);
     next_plat = ds_list_find_value(route, 1);
     // If we're on the same platform, move towards the player x.
@@ -88,6 +89,7 @@ if(ds_exists(route, ds_type_list)) {
             // Once we leave the current plat, we need to clean the status.
             // If we are not on the current platform (in the air or on adjacent
             inst = instance_place(enemy.x, enemy.y+2, obj_surface_parent);
+            // Will need to change to start
             if (inst != curr_plat) {
                 // Delete the first element, reset our fear of heights.
                 ds_list_delete(route, 0);
