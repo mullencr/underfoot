@@ -33,6 +33,10 @@
       <sprite>sprites\spr_plat_signal</sprite>
       <sprite>sprites\spr_en_range_block</sprite>
       <sprite>sprites\spr_plat_small</sprite>
+      <sprite>sprites\spr_floor_stone</sprite>
+      <sprite>sprites\spr_floor_moss</sprite>
+      <sprite>sprites\spr_floor_end</sprite>
+      <sprite>sprites\spr_floor_tile</sprite>
     </sprites>
     <sprites name="spr_player">
       <sprite>sprites\spr_player_idle</sprite>
@@ -46,6 +50,7 @@
       <sprite>sprites\spr_player_throw</sprite>
       <sprite>sprites\spr_hitbox_scim_slash</sprite>
       <sprite>sprites\spr_player_hurt</sprite>
+      <sprite>sprites\spr_player_sprint</sprite>
     </sprites>
     <sprites name="weapons">
       <sprite>sprites\spr_frisbee</sprite>
@@ -70,6 +75,9 @@
       <sprite>sprites\spr_game_over</sprite>
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_scroll</sprite>
+    </sprites>
+    <sprites name="items">
+      <sprite>sprites\spr_feather</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -114,6 +122,8 @@
       <script>scripts\selectPlayerAnimation.gml</script>
       <script>scripts\collideSolidTerrain.gml</script>
       <script>scripts\collideWall.gml</script>
+      <script>scripts\fixFrisBug.gml</script>
+      <script>scripts\setStun.gml</script>
     </scripts>
     <scripts name="en_group">
       <scripts name="en_ground">
@@ -192,35 +202,48 @@
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_en_fly</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_en_ground</object>
-    <object>objects\obj_en_parent</object>
-    <object>objects\obj_plat_large</object>
-    <object>objects\obj_surface_parent</object>
-    <object>objects\obj_floor</object>
-    <object>objects\obj_signal</object>
-    <object>objects\obj_stair_l</object>
-    <object>objects\obj_stair_r</object>
-    <object>objects\hbox_player_atk</object>
-    <object>objects\obj_frisbee</object>
-    <object>objects\obj_player</object>
-    <object>objects\obj_music_player</object>
     <object>objects\obj_en_range_block</object>
-    <object>objects\obj_plat_small</object>
-    <object>objects\hbox_en_ground_swing1</object>
-    <object>objects\obj_gui_drawer</object>
-    <object>objects\obj_en_projectile</object>
     <object>objects\obj_djump_pwrup</object>
-    <object>objects\obj_start_button</object>
-    <object>objects\obj_heart</object>
-    <object>objects\obj_pause</object>
-    <object>objects\obj_en_hook</object>
-    <object>objects\obj_link</object>
-    <object>objects\obj_title</object>
-    <object>objects\obj_game_over</object>
-    <object>objects\hbox_en_ground_swing2</object>
-    <object>objects\obj_view_manager</object>
+    <objects name="environmental">
+      <object>objects\obj_floor_moss</object>
+      <object>objects\obj_floor_stone</object>
+      <object>objects\obj_floor_end</object>
+      <object>objects\obj_floor_tile</object>
+      <object>objects\obj_plat_small</object>
+      <object>objects\obj_plat_large</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_floor</object>
+      <object>objects\obj_stair_l</object>
+      <object>objects\obj_stair_r</object>
+      <object>objects\obj_surface_parent</object>
+    </objects>
+    <objects name="obj_gui">
+      <object>objects\obj_game_over</object>
+      <object>objects\obj_heart</object>
+      <object>objects\obj_start_button</object>
+      <object>objects\obj_title</object>
+    </objects>
+    <objects name="abstract">
+      <object>objects\obj_view_manager</object>
+      <object>objects\obj_pause</object>
+      <object>objects\obj_gui_drawer</object>
+      <object>objects\obj_music_player</object>
+    </objects>
+    <objects name="weapons">
+      <object>objects\obj_en_hook</object>
+      <object>objects\obj_link</object>
+      <object>objects\obj_frisbee</object>
+      <object>objects\hbox_en_ground_swing2</object>
+      <object>objects\hbox_en_ground_swing1</object>
+      <object>objects\obj_en_projectile</object>
+      <object>objects\hbox_player_atk</object>
+    </objects>
+    <objects name="critters">
+      <object>objects\obj_en_fly</object>
+      <object>objects\obj_en_ground</object>
+      <object>objects\obj_player</object>
+      <object>objects\obj_en_parent</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

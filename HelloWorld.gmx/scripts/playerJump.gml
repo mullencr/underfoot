@@ -1,4 +1,7 @@
 /// jump()
+if (stunned) 
+    return 0;
+    
 if (key_jump) { 
     if (collideTerrain(x, y+1)) {
         vsp = key_jump * -jumpspeed;

@@ -9,6 +9,7 @@ if (attacking == 0 && key_atk) {
         attacking = 2;
  
     image_index = 0;
+    instance_destroy(hbox_player_atk);
     atk = instance_create(x, y, hbox_player_atk);
     atk.image_xscale = image_xscale;
 }
@@ -18,5 +19,6 @@ if (sprite_index == spr_player_atk ||
     if (attacking && image_index == 0) { // Attack ends
         attacking = 0;
         instance_destroy(hbox_player_atk);
-        }
+        swing_has_hit = false;
+    }
 }

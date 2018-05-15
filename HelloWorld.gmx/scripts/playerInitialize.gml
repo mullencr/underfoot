@@ -16,12 +16,14 @@ STUN_VSP = 4;
 attacking = 0;
 throwing = 0;
 stunned = false;
+invincible = false;
 rolling = false;
-inf_frisbees = true;
+inf_frisbees = false;
 has_frisbee = false;
 image_speed = 0.25;
 in_block = false;
 djump_enabled = false;
+swing_has_hit = false;
 
 // ALARMS
 STUN_ALARM = 0;

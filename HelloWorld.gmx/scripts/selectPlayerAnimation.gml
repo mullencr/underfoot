@@ -9,12 +9,17 @@ if (sprite_index == spr_player_throw) {
     if (image_index == 0) { // Throwing ends
         throwing = 0;
     } else if (image_index == 3) {
-        fris = instance_create(x + sign(dir) * 25, y, obj_frisbee);
+        var fris = instance_create(x + sign(dir) * 25, y, obj_frisbee);
         fris.airborne = true;
         fris.dir = point_direction(x, y, mouse_x, mouse_y);
         with (fris) {
             initializeFrisSpeed();
         }
+        
+        has_frisbee = false;
+        return 0;
+    } else {
+        return 0;
     }
 }
 
@@ -25,7 +30,10 @@ if (collideTerrain(x, y+1)) {
     else if (attacking) {
         sprite_index = spr_player_atk;
     } else if (hsp != 0) {
-        sprite_index = spr_player_run;
+        if (hsp == abs(movespeed))
+            sprite_index = spr_player_sprint;
+        else
+            sprite_index = spr_player_run;
     } else {
         sprite_index = spr_player_idle;
     }

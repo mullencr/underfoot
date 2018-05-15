@@ -4,10 +4,15 @@ if(instance_exists(obj_player)) {
         with(obj_player) {
             if (!other.has_hit) {
                 playerDamage(5, other.thrower.x);
+                hsp = 0;
+                vsp = 0;
                 other.hold_count = obj_en_fly.hold_count;
             }
         }
         has_hit = true;
+        with(obj_player) {
+            setStun(true);
+        }
     }
 }
 // recheck. we might have just killed him.

@@ -31,13 +31,13 @@ if (inf_frisbees)
     has_frisbee = true;
     
 if (mouse_left && has_frisbee) {
-    throwing = 1;
+    throwing = true;
     if (mouse_x > x)
         dir = DIR_RIGHT;
     else if (mouse_x < x)
         dir = DIR_LEFT;
         
-    has_frisbee = false;
+   // has_frisbee = false;
 }
 
 

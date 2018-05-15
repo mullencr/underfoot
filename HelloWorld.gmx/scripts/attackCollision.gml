@@ -1,7 +1,10 @@
-enemy = instance_place(x,y,obj_en_parent);
+var enemy = instance_place(x,y,obj_en_parent);
 
 if (enemy != noone) {
-    with(enemy) {
-        enemy.en_health -= 10;
+    with (obj_player) {
+        if (!swing_has_hit) {
+            enemy.en_health -= 10;
+            swing_has_hit = true;
+        }
     }
 }

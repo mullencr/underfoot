@@ -1,5 +1,7 @@
 /// playerStep()
 
+fixFrisBug();
+
 // Input
 getPlayerInput();
 reactToInputs();
