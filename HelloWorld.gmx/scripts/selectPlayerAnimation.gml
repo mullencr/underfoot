@@ -18,6 +18,8 @@ if (sprite_index == spr_player_throw) {
         
         has_frisbee = false;
         return 0;
+    } else {
+        return 0;
     }
 }
 
@@ -28,7 +30,10 @@ if (collideTerrain(x, y+1)) {
     else if (attacking) {
         sprite_index = spr_player_atk;
     } else if (hsp != 0) {
-        sprite_index = spr_player_run;
+        if (hsp == abs(movespeed))
+            sprite_index = spr_player_sprint;
+        else
+            sprite_index = spr_player_run;
     } else {
         sprite_index = spr_player_idle;
     }

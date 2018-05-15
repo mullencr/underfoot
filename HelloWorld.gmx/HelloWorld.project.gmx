@@ -46,6 +46,7 @@
       <sprite>sprites\spr_player_throw</sprite>
       <sprite>sprites\spr_hitbox_scim_slash</sprite>
       <sprite>sprites\spr_player_hurt</sprite>
+      <sprite>sprites\spr_player_sprint</sprite>
     </sprites>
     <sprites name="weapons">
       <sprite>sprites\spr_frisbee</sprite>
@@ -115,6 +116,7 @@
       <script>scripts\collideSolidTerrain.gml</script>
       <script>scripts\collideWall.gml</script>
       <script>scripts\fixFrisBug.gml</script>
+      <script>scripts\setStun.gml</script>
     </scripts>
     <scripts name="en_group">
       <scripts name="en_ground">

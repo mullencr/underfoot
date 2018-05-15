@@ -16,6 +16,7 @@ STUN_VSP = 4;
 attacking = 0;
 throwing = 0;
 stunned = false;
+invincible = false;
 rolling = false;
 inf_frisbees = false;
 has_frisbee = false;
