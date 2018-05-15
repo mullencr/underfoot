@@ -14,7 +14,9 @@ if(instance_exists(obj_player)) {
             setStun(true);
         }
     }
-    
+}
+// recheck. we might have just killed him.
+if(instance_exists(obj_player)) {   
     if (has_hit) {
         self.x = obj_player.x;
         self.y = obj_player.y;
