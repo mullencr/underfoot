@@ -90,6 +90,7 @@
     <sprites name="environmental">
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_plat</sprite>
+      <sprite>sprites\spr_plat_detached</sprite>
       <sprite>sprites\spr_floor</sprite>
       <sprite>sprites\spr_floor_signal</sprite>
       <sprite>sprites\spr_plat_signal</sprite>
@@ -101,6 +102,8 @@
       <sprite>sprites\spr_floor_tile</sprite>
       <sprite>sprites\spr_block</sprite>
       <sprite>sprites\spr_large_pillar</sprite>
+      <sprite>sprites\spr_big_dong</sprite>
+      <sprite>sprites\sprite69</sprite>
     </sprites>
     <sprites name="spr_player">
       <sprite>sprites\spr_player_idle</sprite>
@@ -362,6 +365,8 @@
     <object>objects\obj_snd_player</object>
     <object>objects\obj_THS_item</object>
     <object>objects\obj_view_control</object>
+    <object>objects\obj_big_pillar</object>
+    <object>objects\obj_plat_detached</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
