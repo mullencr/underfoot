@@ -152,11 +152,12 @@
     <instance objName="obj_floor" x="2080" y="1248" name="inst_4AAC14BC" locked="0" code="" scaleX="0.836000025272369" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_plat_small" x="1312" y="160" name="inst_BD31DFCA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_plat_small" x="1728" y="320" name="inst_6C1B6146" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gui_drawer" x="-64" y="960" name="inst_429D768B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pause" x="-96" y="960" name="inst_108EDB54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gui_drawer" x="96" y="960" name="inst_429D768B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pause" x="96" y="992" name="inst_108EDB54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_en_ground" x="1536" y="1344" name="inst_55538BA9" locked="0" code="" scaleX="0.76441103219986" scaleY="0.727999985218048" colour="4294967295" rotation="0"/>
     <instance objName="obj_en_range_block" x="0" y="0" name="inst_4D11307A" locked="0" code="" scaleX="2.30697679519653" scaleY="1.74883723258972" colour="4294967295" rotation="0"/>
     <instance objName="obj_djump_pwrup" x="1792" y="256" name="inst_A82100F9" locked="0" code="" scaleX="0.327956974506378" scaleY="0.136752143502235" colour="4294967295" rotation="0"/>
+    <instance objName="obj_view_manager" x="96" y="1024" name="inst_B69FF719" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

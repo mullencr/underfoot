@@ -186,6 +186,10 @@
       <script>scripts\gui_rm_end_step.gml</script>
       <script>scripts\create_main_gui.gml</script>
     </scripts>
+    <scripts name="views">
+      <script>scripts\view_controller_init.gml</script>
+      <script>scripts\view_controller_step.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_en_fly</object>
@@ -209,7 +213,6 @@
     <object>objects\obj_en_projectile</object>
     <object>objects\obj_djump_pwrup</object>
     <object>objects\obj_start_button</object>
-    <object>objects\obj_view_manager</object>
     <object>objects\obj_heart</object>
     <object>objects\obj_pause</object>
     <object>objects\obj_en_hook</object>
@@ -217,6 +220,7 @@
     <object>objects\obj_title</object>
     <object>objects\obj_game_over</object>
     <object>objects\hbox_en_ground_swing2</object>
+    <object>objects\obj_view_manager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
