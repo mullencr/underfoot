@@ -9,6 +9,16 @@ damage_frame_start = 4;
 damage_frame_end = 5;
 
 // For efficiencty:
+if (curr_img == damage_frame_end) {
+    with (obj_snd_player) {
+        sndTHSdmg();
+    }
+} else if (curr_img == damage_frame_start) {
+    with (obj_snd_player) {
+        sndMeleeOverSlash();
+    }
+}
+
 if(self.image_index >= damage_frame_start) {
 // Create the hitbox on start
     // Instance create, set the enemy.curr_hitbox to our current hitbox.

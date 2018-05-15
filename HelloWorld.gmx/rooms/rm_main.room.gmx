@@ -161,6 +161,7 @@
     <instance objName="obj_wall" x="4800" y="1792" name="inst_31B89E08" locked="0" code="" scaleX="5" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="4800" y="1952" name="inst_23426179" locked="0" code="" scaleX="2" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="4544" y="2400" name="inst_CF318958" locked="0" code="" scaleX="9" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_snd_player" x="128" y="192" name="inst_16D5DE63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

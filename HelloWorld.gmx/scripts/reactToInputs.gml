@@ -1,6 +1,26 @@
 /// reactToInputs()
-if (stunned || throwing) {
+if (stunned || throwing || rolling) {
     return 0;
+}
+
+if (key_1 && has_candle) {
+    equipped = CANDLE_ID;
+}
+
+if (key_2 && has_scim) {
+    equipped = OHS_ID;
+}
+
+if (key_3 && has_ths) {
+    equipped = THS_ID;
+}
+
+if (key_right || key_left) {
+    if (collideTerrain(x, y+1)) {
+        with (obj_snd_player) {
+            //sndLokiFoot();
+        }
+    }
 }
 
 if (key_right) {
@@ -37,6 +57,7 @@ if (mouse_left && has_frisbee) {
     else if (mouse_x < x)
         dir = DIR_LEFT;
         
+    sprite_index = spr_player_throw;
    // has_frisbee = false;
 }
 

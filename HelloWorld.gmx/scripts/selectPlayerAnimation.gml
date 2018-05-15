@@ -5,6 +5,19 @@ if (dir == DIR_RIGHT) {
     image_xscale = 0 - abs(image_xscale);
 }
 
+if (sprite_index == spr_player_land) {
+    if (image_index == 0) 
+        just_landed = false;
+    else
+        return 0;
+}
+
+if (just_landed) {
+    sprite_index = spr_player_land;
+    just_landed = false;
+    return 0;
+}
+
 if (sprite_index == spr_player_throw) {
     if (image_index == 0) { // Throwing ends
         throwing = 0;
@@ -34,6 +47,12 @@ if (collideTerrain(x, y+1)) {
             sprite_index = spr_player_sprint;
         else
             sprite_index = spr_player_run;
+            
+        if (image_index == 1 || image_index == 3 || image_index == 5) {
+            with (obj_snd_player) {
+                sndLokiFoot();
+            }
+        }
     } else {
         sprite_index = spr_player_idle;
     }
@@ -43,10 +62,12 @@ if (collideTerrain(x, y+1)) {
     }
     else if (attacking) {
         sprite_index = spr_player_air_atk;
-    } else if (vsp < 0) {
+    } else if (vsp < -APEX_CONST) {
         sprite_index = spr_player_jump;
-    } else {
+    } else if (vsp > APEX_CONST) {
         sprite_index = spr_player_fall;
+    } else {
+        sprite_index = spr_player_apex;
     }
 }
 

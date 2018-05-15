@@ -3,7 +3,7 @@
   <spriteName>spr_energy_ball</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,6 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>///init
+
+with(obj_snd_player) {
+    sndRangedProj();
+}
+
 image_angle = point_direction(x, y, obj_player.x, obj_player.y) + 180;
 
 image_speed = 0.15;

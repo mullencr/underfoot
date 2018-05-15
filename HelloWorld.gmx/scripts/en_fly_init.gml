@@ -1,8 +1,8 @@
 ///InitPath
 movespeed = 2;
 range_shoot = 800;
-range_spot = 400;
-range_atk = 200;
+range_spot = 600;
+range_atk = 400;
 range_block = en_get_range_block(self);
 rest_count = 0;
 projectile_damage = 10;

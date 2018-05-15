@@ -3,22 +3,24 @@
 // the player is invulnerable while stunned
 // Param - 
 //      dmg - the amount of damage for the player to take
-//      en_x - the x val of the dmg source
 
 if (!invincible) {
-    hp -= argument0  
-}
+
+    with (obj_snd_player) {
+        sndLokiDmg();
+    }
+    hp -= argument0;
     
-if (hp <= 0) {
-    killPlayer();
+        
+    if (hp <= 0) {
+        with (obj_snd_player) {
+            sndLokiDeath();
+        }
+        killPlayer();
+    }
+
 }
 
-if (argument_count != 3) {
-    invincible = true;
-} else {
-    invincible = false;
-    return 0;
-}
 
 if (argument1 < x) {
     stunPlayer(DIR_RIGHT);
