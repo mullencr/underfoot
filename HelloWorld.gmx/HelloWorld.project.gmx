@@ -7,6 +7,68 @@
   <sounds name="sound">
     <sound>sound\snd_opening</sound>
     <sound>sound\snd_noncombat</sound>
+    <sound>sound\snd_</sound>
+    <sound>sound\snd_candle_dmg1</sound>
+    <sound>sound\snd_candle_dmg2</sound>
+    <sound>sound\snd_candle_dmg3</sound>
+    <sound>sound\snd_candle_obtain</sound>
+    <sound>sound\snd_candle_swing1</sound>
+    <sound>sound\snd_candle_swing2</sound>
+    <sound>sound\snd_candle_swing3</sound>
+    <sound>sound\snd_fris_dmg1</sound>
+    <sound>sound\snd_fris_dmg2</sound>
+    <sound>sound\snd_fris_obtain</sound>
+    <sound>sound\snd_loki_dash</sound>
+    <sound>sound\snd_loki_death1</sound>
+    <sound>sound\snd_loki_death2</sound>
+    <sound>sound\snd_loki_dmg1</sound>
+    <sound>sound\snd_loki_dmg2</sound>
+    <sound>sound\snd_loki_dmg3</sound>
+    <sound>sound\snd_loki_dmg4</sound>
+    <sound>sound\snd_loki_dmg5</sound>
+    <sound>sound\snd_loki_dmg6</sound>
+    <sound>sound\snd_loki_ft1</sound>
+    <sound>sound\snd_loki_ft2</sound>
+    <sound>sound\snd_loki_ft3</sound>
+    <sound>sound\snd_loki_ft4</sound>
+    <sound>sound\snd_loki_ft5</sound>
+    <sound>sound\snd_loki_ft6</sound>
+    <sound>sound\snd_loki_ft7</sound>
+    <sound>sound\snd_loki_ft8</sound>
+    <sound>sound\snd_loki_ft9</sound>
+    <sound>sound\snd_loki_land1</sound>
+    <sound>sound\snd_loki_land2</sound>
+    <sound>sound\snd_loki_land3</sound>
+    <sound>sound\snd_melee_front_slash</sound>
+    <sound>sound\snd_melee_ft1</sound>
+    <sound>sound\snd_melee_ft2</sound>
+    <sound>sound\snd_melee_ft3</sound>
+    <sound>sound\snd_melee_ft4</sound>
+    <sound>sound\snd_melee_ft5</sound>
+    <sound>sound\snd_melee_ft6</sound>
+    <sound>sound\snd_melee_land1</sound>
+    <sound>sound\snd_melee_land2</sound>
+    <sound>sound\snd_melee_overhead_slash</sound>
+    <sound>sound\snd_noncombat_new</sound>
+    <sound>sound\snd_ohs_dmg1</sound>
+    <sound>sound\snd_ohs_dmg2</sound>
+    <sound>sound\snd_ohs_dmg3</sound>
+    <sound>sound\snd_ohs_dmg4</sound>
+    <sound>sound\snd_ohs_obtain</sound>
+    <sound>sound\snd_ohs_swing1</sound>
+    <sound>sound\snd_ohs_swing2</sound>
+    <sound>sound\snd_ohs_swing3</sound>
+    <sound>sound\snd_opening_new</sound>
+    <sound>sound\snd_ranged_chain_throw</sound>
+    <sound>sound\snd_ranged_proj</sound>
+    <sound>sound\snd_ths_dmg1</sound>
+    <sound>sound\snd_ths_dmg2</sound>
+    <sound>sound\snd_ths_dmg3</sound>
+    <sound>sound\snd_ths_obtain</sound>
+    <sound>sound\snd_ths_swing1</sound>
+    <sound>sound\snd_ths_swing2</sound>
+    <sound>sound\sound12</sound>
+    <sound>sound\sound34</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="spr_en_ground">
@@ -81,6 +143,18 @@
     <sprites name="items">
       <sprite>sprites\spr_feather</sprite>
     </sprites>
+    <sprite>sprites\crosshairs</sprite>
+    <sprite>sprites\spr_candle_item</sprite>
+    <sprite>sprites\spr_feather1</sprite>
+    <sprite>sprites\spr_plat_new</sprite>
+    <sprite>sprites\spr_player_new</sprite>
+    <sprite>sprites\spr_player_apex</sprite>
+    <sprite>sprites\spr_player_land</sprite>
+    <sprite>sprites\spr_scim_item</sprite>
+    <sprite>sprites\spr_scroll_new</sprite>
+    <sprite>sprites\spr_THS_item</sprite>
+    <sprite>sprites\sprite52</sprite>
+    <sprite>sprites\twit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -202,6 +276,37 @@
       <script>scripts\view_controller_init.gml</script>
       <script>scripts\view_controller_step.gml</script>
     </scripts>
+    <script>scripts\collideFloor.gml</script>
+    <script>scripts\en_node_walk_off_right.gml</script>
+    <script>scripts\get_connections.gml</script>
+    <script>scripts\instance_place_list.gml</script>
+    <script>scripts\is_connected.gml</script>
+    <script>scripts\playerDamageNoStun.gml</script>
+    <script>scripts\rollAlarm.gml</script>
+    <script>scripts\script3.gml</script>
+    <script>scripts\sndCandleDmg.gml</script>
+    <script>scripts\sndCandleObtain.gml</script>
+    <script>scripts\sndCandleSwing.gml</script>
+    <script>scripts\sndFrisDmg.gml</script>
+    <script>scripts\sndFrisObtain.gml</script>
+    <script>scripts\sndLokiDash.gml</script>
+    <script>scripts\sndLokiDeath.gml</script>
+    <script>scripts\sndLokiDmg.gml</script>
+    <script>scripts\sndLokiFoot.gml</script>
+    <script>scripts\sndLokiLand.gml</script>
+    <script>scripts\sndMeleeFoot.gml</script>
+    <script>scripts\sndMeleeFrontSlash.gml</script>
+    <script>scripts\sndMeleeLand.gml</script>
+    <script>scripts\sndMeleeOverSlash.gml</script>
+    <script>scripts\sndOHSdmg.gml</script>
+    <script>scripts\sndOHSobtain.gml</script>
+    <script>scripts\sndOHSswing.gml</script>
+    <script>scripts\sndPlayerInit.gml</script>
+    <script>scripts\sndRangedChain.gml</script>
+    <script>scripts\sndRangedProj.gml</script>
+    <script>scripts\sndTHSdmg.gml</script>
+    <script>scripts\sndTHSobtain.gml</script>
+    <script>scripts\sndTHSswing.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_en_range_block</object>
@@ -249,6 +354,14 @@
       <object>objects\obj_en_parent</object>
     </objects>
     <object>objects\obj_door</object>
+    <object>objects\obj_bird</object>
+    <object>objects\obj_candle</object>
+    <object>objects\obj_point</object>
+    <object>objects\obj_scim_item</object>
+    <object>objects\obj_signal</object>
+    <object>objects\obj_snd_player</object>
+    <object>objects\obj_THS_item</object>
+    <object>objects\obj_view_control</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

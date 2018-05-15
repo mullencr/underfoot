@@ -9,17 +9,32 @@ if (true) {
     if (in_block) {
         if (not place_meeting(x, y+vsp, obj_plat_small) and
             not place_meeting(x, y, obj_plat_small))
-            in_block = false
+            in_block = false;
     } else {
         if (place_meeting(x, y + vsp, obj_plat_small)) {
             moveToWallV(vsp);
             vsp = 0;
+            if (!landed) {
+                with (obj_snd_player) {
+                    sndLokiLand();
+                }
+                just_landed = true;
+            }
+            landed = true;
         }
     }
     
     if (collideSolidTerrain(x, y+vsp)) {
         moveToWallV(vsp);
         vsp = 0;
+        
+        if (!landed) {
+            with (obj_snd_player) {
+                sndLokiLand();
+            }
+            just_landed = true;
+        }
+        landed = true;
     }
     /*
     inst = instance_place(x, y + vsp, obj_surface_parent);
@@ -38,3 +53,6 @@ if (true) {
     }
     */
 }
+
+if (!collideTerrain(x, y+vsp+1))
+    landed = false;

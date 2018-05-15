@@ -1,5 +1,5 @@
 /// playerAttack()
-if (stunned)
+if (stunned || equipped == 0)
     return 0;
     
 if (attacking == 0 && key_atk) {
@@ -11,6 +11,21 @@ if (attacking == 0 && key_atk) {
     image_index = 0;
     instance_destroy(hbox_player_atk);
     atk = instance_create(x, y, hbox_player_atk);
+    
+    if (equipped == OHS_ID) {
+        with (obj_snd_player) {
+            sndOHSswing();
+        }
+    } else if (equipped == THS_ID) {
+        with (obj_snd_player) {
+            sndTHSswing();
+        }
+    } else if (equipped == CANDLE_ID) {
+        with (obj_snd_player) {
+            sndCandleSwing();
+        }
+    }
+    
     atk.image_xscale = image_xscale;
 }
 

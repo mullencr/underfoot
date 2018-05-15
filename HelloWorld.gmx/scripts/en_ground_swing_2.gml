@@ -9,6 +9,12 @@ self.sprite_index = spr_en_attack_2;
 damage_frame_start = 2;
 damage_frame_end = 3;
 
+if (curr_img == damage_frame_start) {
+    with (obj_snd_player) {
+        sndMeleeFrontSlash();
+        sndTHSdmg();
+    }
+}
 // For efficiencty:
 if(self.image_index >= damage_frame_start) {
 // Create the hitbox on start

@@ -1,5 +1,5 @@
 ///checkProjCollision
-if (place_meeting(x, y, obj_surface_parent)) {
+if (collideWall(x, y) || collideFloor(x,y)) {
     direction = direction + 180;
     speed = 0;
     has_hit = true;

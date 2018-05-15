@@ -7,6 +7,7 @@ if (!stunned) {
     stunned = true;
     alarm[STUN_ALARM] = room_speed * STUN_TIME;
     
+    invincible = true;
     attacking = 0;
     throwing = 0;
     hsp = 0;

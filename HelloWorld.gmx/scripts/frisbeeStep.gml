@@ -6,6 +6,9 @@ if (airborne) {
         image_speed = 0;
         hsp = 0;
         vsp = 0;
+        with (obj_snd_player) {
+            sndFrisDmg();
+        }
     }
     if (collideTerrain(x + hsp, y)) {
         moveToWallH(hsp);
@@ -13,6 +16,9 @@ if (airborne) {
         image_speed = 0;
         hsp = 0;
         vsp = 0;
+        with (obj_snd_player) {
+            sndFrisDmg();
+        }
     }
     // Added by charles
     // If the frisbee hits an enemy, call stun on that enemy.
@@ -24,6 +30,9 @@ if (airborne) {
         image_speed = 0;
         hsp = 0;
         vsp = 0;
+                with (obj_snd_player) {
+            sndFrisDmg();
+        }
     }
     
     applyGrav();
