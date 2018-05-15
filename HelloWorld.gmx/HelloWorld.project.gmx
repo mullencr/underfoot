@@ -69,8 +69,6 @@
     <sound>sound\snd_ths_swing2</sound>
     <sound>sound\sound12</sound>
     <sound>sound\sound34</sound>
-    <sound>sound\snd_combat</sound>
-    <sound>sound\snd_boss</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="spr_en_ground">
@@ -120,8 +118,6 @@
       <sprite>sprites\spr_hitbox_scim_slash</sprite>
       <sprite>sprites\spr_player_hurt</sprite>
       <sprite>sprites\spr_player_sprint</sprite>
-      <sprite>sprites\spr_player_atk_candle</sprite>
-      <sprite>sprites\spr_player_atk_ths</sprite>
     </sprites>
     <sprites name="weapons">
       <sprite>sprites\spr_frisbee</sprite>
@@ -207,7 +203,7 @@
       <script>scripts\collideWall.gml</script>
       <script>scripts\fixFrisBug.gml</script>
       <script>scripts\setStun.gml</script>
-      <script>scripts\selectMusic.gml</script>
+      <script>scripts\&lt;undefined&gt;.gml</script>
     </scripts>
     <scripts name="en_group">
       <scripts name="en_ground">
@@ -298,7 +294,7 @@
     <script>scripts\sndFrisDmg.gml</script>
     <script>scripts\sndFrisObtain.gml</script>
     <script>scripts\sndLokiDash.gml</script>
-    <script>scripts\sndAlarm.gml</script>
+    <script>scripts\&lt;undefined&gt;.gml</script>
     <script>scripts\sndLokiDeath.gml</script>
     <script>scripts\sndLokiDmg.gml</script>
     <script>scripts\sndLokiFoot.gml</script>
@@ -316,9 +312,9 @@
     <script>scripts\sndTHSdmg.gml</script>
     <script>scripts\sndTHSobtain.gml</script>
     <script>scripts\sndTHSswing.gml</script>
-    <script>scripts\playOpeningMusic.gml</script>
-    <script>scripts\playNonCombatMusic.gml</script>
-    <script>scripts\playCombatMusic.gml</script>
+    <script>scripts\&lt;undefined&gt;.gml</script>
+    <script>scripts\&lt;undefined&gt;.gml</script>
+    <script>scripts\&lt;undefined&gt;.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_en_range_block</object>
@@ -376,8 +372,6 @@
     <object>objects\obj_view_control</object>
     <object>objects\obj_big_pillar</object>
     <object>objects\obj_plat_detached</object>
-    <object>objects\obj_fountain_switch</object>
-    <object>objects\obj_fountain_heal</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
