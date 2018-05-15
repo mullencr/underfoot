@@ -12,3 +12,6 @@ OHSdmgCounter = 0;
 OHSswingCounter = 0;
 THSdmgCounter = 0;
 THSswingCounter = 0;
+
+curr_music = snd_opening;
+next_music = noone;

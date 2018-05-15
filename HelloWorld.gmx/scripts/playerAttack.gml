@@ -30,7 +30,8 @@ if (attacking == 0 && key_atk) {
 }
 
 if (sprite_index == spr_player_atk ||
-    sprite_index == spr_player_air_atk) {
+    sprite_index == spr_player_atk_candle ||
+    sprite_index == spr_player_atk_ths) {
     if (attacking && image_index == 0) { // Attack ends
         attacking = 0;
         instance_destroy(hbox_player_atk);

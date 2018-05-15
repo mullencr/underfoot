@@ -1,8 +1,15 @@
 /// playerInitialize()
-hp = 100;
+MAX_HP = 100;
+HEAL_RATE = 0.25;
+hp = MAX_HP;
 grav = 0.3;
 hsp = 0;
 vsp = 0;
+
+curr_music = 0;
+COMBAT_DIST = 800;
+in_fountain = false;
+in_combat = false;
 
 jumpspeed = 15;
 movespeed = 7;
@@ -38,7 +45,11 @@ has_ths = false;
 OHS_ID = 1;
 THS_ID = 2;
 CANDLE_ID = 3;
-equipped = OHS_ID;
+equipped = 0;
+
+OHS_DMG = 10;
+CANDLE_DMG = 5;
+THS_DMG = 20;
 
 // ALARMS
 STUN_ALARM = 0;

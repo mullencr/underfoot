@@ -20,6 +20,7 @@ if (inst != noone) {
     }
     instance_destroy(inst);
     has_scim = true;
+    equipped = OHS_ID;
 }
 
 inst = instance_place(x,y, obj_candle);
@@ -29,6 +30,7 @@ if (inst != noone) {
     }
     instance_destroy(inst);
     has_candle = true;
+    equipped = CANDLE_ID;
 }
 
 inst = instance_place(x,y, obj_THS_item);
@@ -38,4 +40,19 @@ if (inst != noone) {
     }
     instance_destroy(inst);
     has_ths = true;
+    equipped = THS_ID;
 }
+
+inst = instance_place(x, y, obj_fountain_switch);
+if (inst != noone) {
+    instance_destroy(obj_thick_pillar);
+}
+
+inst = instance_place(x,y, obj_fountain_heal);
+if (inst != noone) {
+    in_fountain = true;
+    hp += HEAL_RATE;
+    if (hp > MAX_HP)
+        hp = MAX_HP;
+} else
+    in_fountain = false;

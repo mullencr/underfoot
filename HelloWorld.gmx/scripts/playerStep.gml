@@ -28,3 +28,4 @@ playerAttack();
 
 // Animations
 selectPlayerAnimation();
+selectMusic();
