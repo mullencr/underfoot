@@ -6,6 +6,9 @@ grav = 0.3;
 hsp = 0;
 vsp = 0;
 
+boss_triggered = false;
+hallway_triggered = false;
+
 curr_music = 0;
 COMBAT_DIST = 800;
 in_fountain = false;

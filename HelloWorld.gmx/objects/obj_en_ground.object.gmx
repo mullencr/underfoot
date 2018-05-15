@@ -3,7 +3,7 @@
   <spriteName>spr_en_idle</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>obj_en_parent</parentName>
   <maskName>spr_en_idle</maskName>

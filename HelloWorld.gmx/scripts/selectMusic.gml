@@ -1,5 +1,8 @@
 in_combat = (distance_to_object(obj_en_parent) < COMBAT_DIST)
 
+if (boss_triggered || hallway_triggered) 
+    return 0;
+    
 if (in_fountain) {
     // Select opening music
     if (curr_music != 1) {

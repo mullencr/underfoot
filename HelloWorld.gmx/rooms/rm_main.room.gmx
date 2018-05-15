@@ -442,14 +442,12 @@
     <instance objName="obj_en_fly" x="2288" y="4576" name="inst_419BCA14" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_en_fly" x="2976" y="4624" name="inst_76883C85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_en_fly" x="2352" y="5136" name="inst_563173A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_en_range_block" x="1616" y="4208" name="inst_649DFA37" locked="0" code="" scaleX="2.13953495025635" scaleY="1.5441859960556" colour="4294967295" rotation="0"/>
     <instance objName="obj_en_fly" x="2832" y="4976" name="inst_9EFF743B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_plat_small" x="2544" y="4864" name="inst_C246FA04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_plat_small" x="2080" y="4528" name="inst_9866383B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_plat_small" x="3056" y="4528" name="inst_8FD5FE3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_plat_small" x="3008" y="5232" name="inst_2B662766" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_plat_small" x="2096" y="5232" name="inst_7319166F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_fountain_heal" x="1952" y="2096" name="inst_A1FA1AB6" locked="0" code="" scaleX="24.25" scaleY="19.8709678649902" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_moss" x="5712" y="1280" name="inst_C5FAFA6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="obj_floor_moss" x="5712" y="1152" name="inst_C0D5866C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="obj_floor_moss" x="5712" y="1008" name="inst_F4D79721" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
@@ -505,7 +503,28 @@
     <instance objName="obj_floor_moss" x="4912" y="4336" name="inst_72A8646E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_moss" x="4752" y="4336" name="inst_31C50529" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor_moss" x="4656" y="4592" name="inst_717598DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
->>>>>>> 97fae5756e488bd69cb48530c1636d37ba78ecfb
+    <instance objName="obj_snd_player" x="912" y="1392" name="inst_997F07DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fountain_heal" x="1968" y="2128" name="inst_37321807" locked="0" code="" scaleX="22.1935482025146" scaleY="17.5483875274658" colour="4294967295" rotation="0"/>
+    <instance objName="obj_candle" x="2960" y="2240" name="inst_60C81CF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_scim_item" x="5104" y="1728" name="inst_3BA893F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_djump_pwrup" x="2592" y="4768" name="inst_4641E77F" locked="0" code="" scaleX="1.70000004768372" scaleY="1.43333327770233" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fountain_switch" x="1376" y="2368" name="inst_E5988399" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hallway_trigger" x="6320" y="1216" name="inst_CEFD94AB" locked="0" code="" scaleX="28" scaleY="7" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boss_trigger" x="5680" y="4176" name="inst_DA615214" locked="0" code="" scaleX="-17.25" scaleY="-9.25" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boss" x="5168" y="4112" name="inst_D691A7D8" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_thick_pillar" x="4928" y="4176" name="inst_466878A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="5680" y="1024" name="inst_D0BB6C87" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="7040" y="1024" name="inst_50944DFA" locked="0" code="" scaleX="1" scaleY="18" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="7040" y="1344" name="inst_52C2B4D5" locked="0" code="" scaleX="1" scaleY="17" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="7040" y="1888" name="inst_F6F79CD6" locked="0" code="" scaleX="1" scaleY="18" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="7040" y="2224" name="inst_3E81E6C5" locked="0" code="" scaleX="1" scaleY="17.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="7040" y="2608" name="inst_CDF9B4F8" locked="0" code="" scaleX="1" scaleY="22" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="7040" y="2864" name="inst_B2052098" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="7040" y="3504" name="inst_70F251C6" locked="0" code="" scaleX="1.5" scaleY="22" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="7040" y="4128" name="inst_41C7D5A2" locked="0" code="" scaleX="1" scaleY="6.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floor" x="5712" y="4336" name="inst_C5E8A1A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floor" x="4912" y="4336" name="inst_1D602333" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_djump_pwrup" x="3088" y="2240" name="inst_EE5F55F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

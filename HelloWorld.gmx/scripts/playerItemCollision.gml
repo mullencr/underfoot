@@ -56,3 +56,23 @@ if (inst != noone) {
         hp = MAX_HP;
 } else
     in_fountain = false;
+    
+inst = instance_place(x,y, obj_boss_trigger);
+if (inst != noone) {
+    if (!boss_triggered) {
+        with(obj_snd_player) {
+            playBossMusic();
+        }
+    }
+    boss_triggered = true;
+}
+
+inst = instance_place(x, y, obj_hallway_trigger);
+if (inst != noone) {
+    if (!hallway_triggered) {
+        with (obj_snd_player) {
+            playHallwayMusic();
+        }
+    }
+    hallway_triggered = true;
+}   
