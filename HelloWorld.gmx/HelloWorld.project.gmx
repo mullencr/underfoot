@@ -11,13 +11,15 @@
   <sprites name="sprites">
     <sprites name="spr_en_ground">
       <sprite>sprites\spr_en_idle</sprite>
-      <sprite>sprites\spr_en_walk</sprite>
+      <sprite>sprites\spr_en_walk_old</sprite>
       <sprite>sprites\spr_en_jump</sprite>
       <sprite>sprites\spr_en_fall</sprite>
       <sprite>sprites\spr_hitbox_swing1</sprite>
       <sprite>sprites\spr_en_attack1</sprite>
-      <sprite>sprites\spr_en_stumble</sprite>
       <sprite>sprites\spr_en_ground_stumble</sprite>
+      <sprite>sprites\spr_en_walk</sprite>
+      <sprite>sprites\spr_en_attack_2</sprite>
+      <sprite>sprites\spr_hitbox_swing2</sprite>
     </sprites>
     <sprites name="testing">
       <sprite>sprites\spr_en_signal</sprite>
@@ -59,11 +61,15 @@
       <sprite>sprites\spr_en_air_hook_throw</sprite>
       <sprite>sprites\spr_en_air_hook_hold</sprite>
       <sprite>sprites\spr_en_air_hook_blast</sprite>
+      <sprite>sprites\spr_en_stumble</sprite>
     </sprites>
     <sprites name="gui">
       <sprite>sprites\spr_start_button</sprite>
       <sprite>sprites\spr_start_pressed</sprite>
       <sprite>sprites\spr_heart</sprite>
+      <sprite>sprites\spr_game_over</sprite>
+      <sprite>sprites\spr_title</sprite>
+      <sprite>sprites\spr_scroll</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -172,6 +178,14 @@
       <script>scripts\en_in_range_block.gml</script>
       <script>scripts\checkHealth.gml</script>
     </scripts>
+    <scripts name="gui">
+      <script>scripts\create_start_gui.gml</script>
+      <script>scripts\draw_main_gui.gml</script>
+      <script>scripts\create_end_gui.gml</script>
+      <script>scripts\gui_rm_main_step.gml</script>
+      <script>scripts\gui_rm_end_step.gml</script>
+      <script>scripts\create_main_gui.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_en_fly</object>
@@ -200,6 +214,9 @@
     <object>objects\obj_pause</object>
     <object>objects\obj_en_hook</object>
     <object>objects\obj_link</object>
+    <object>objects\obj_title</object>
+    <object>objects\obj_game_over</object>
+    <object>objects\hbox_en_ground_swing2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>

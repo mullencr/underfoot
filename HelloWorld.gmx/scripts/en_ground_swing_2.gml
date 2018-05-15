@@ -5,16 +5,16 @@ enemy = argument0;
 curr_img = self.image_index - (self.image_index % 1);
 
 // Set sprite here.
-self.sprite_index = spr_en_attack1;
-damage_frame_start = 4;
-damage_frame_end = 5;
+self.sprite_index = spr_en_attack_2;
+damage_frame_start = 2;
+damage_frame_end = 3;
 
 // For efficiencty:
 if(self.image_index >= damage_frame_start) {
 // Create the hitbox on start
     // Instance create, set the enemy.curr_hitbox to our current hitbox.
     if(self.curr_hitbox == noone) {
-        self.curr_hitbox = instance_create(self.x, self.y, hbox_en_ground_swing1);
+        self.curr_hitbox = instance_create(self.x, self.y, hbox_en_ground_swing2);
     }
 }
 

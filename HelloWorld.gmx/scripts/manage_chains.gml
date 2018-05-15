@@ -1,6 +1,6 @@
 ///manage_chains
 
-if (!(instance_exists(self.thrower))) {
+if (!instance_exists(obj_player)) {
     hook_self_destruct();
 } else {
     

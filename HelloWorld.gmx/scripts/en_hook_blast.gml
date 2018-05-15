@@ -12,6 +12,8 @@ if (curr_img < fire_frame)
 
 if (curr_img == fire_frame and not done) {
     adjustx = 69 * sign(image_xscale);
-    instance_create(x - adjustx, y - 25, obj_en_projectile);
+    var proj = instance_create(x - adjustx, y - 25, obj_en_projectile);
+    proj.image_xscale = self.proj_scale;
+    proj.image_yscale = self.proj_scale;
     done = true;
 }
