@@ -71,6 +71,7 @@
     <sound>sound\sound34</sound>
     <sound>sound\snd_combat</sound>
     <sound>sound\snd_boss</sound>
+    <sound>sound\snd_boss_hallway</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="spr_en_ground">
