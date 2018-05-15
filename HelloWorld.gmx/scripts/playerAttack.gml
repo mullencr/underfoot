@@ -9,6 +9,7 @@ if (attacking == 0 && key_atk) {
         attacking = 2;
  
     image_index = 0;
+    instance_destroy(hbox_player_atk);
     atk = instance_create(x, y, hbox_player_atk);
     atk.image_xscale = image_xscale;
 }

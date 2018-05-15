@@ -19,8 +19,6 @@ if (sprite_index == spr_player_throw) {
         has_frisbee = false;
         return 0;
     }
-    
-    
 }
 
 if (collideTerrain(x, y+1)) {
