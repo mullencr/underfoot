@@ -18,5 +18,6 @@ if (sprite_index == spr_player_atk ||
     if (attacking && image_index == 0) { // Attack ends
         attacking = 0;
         instance_destroy(hbox_player_atk);
-        }
+        swing_has_hit = false;
+    }
 }

@@ -103,6 +103,7 @@
       <script>scripts\selectPlayerAnimation.gml</script>
       <script>scripts\collideSolidTerrain.gml</script>
       <script>scripts\collideWall.gml</script>
+      <script>scripts\fixFrisBug.gml</script>
     </scripts>
     <scripts name="en_group">
       <scripts name="en_ground">
