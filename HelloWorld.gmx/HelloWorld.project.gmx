@@ -253,6 +253,7 @@
   <rooms name="rooms">
     <room>rooms\rm_start</room>
     <room>rooms\rm_main</room>
+    <room>rooms\room4</room>
     <room>rooms\rm_end</room>
     <room>rooms\rm_main_old</room>
   </rooms>
