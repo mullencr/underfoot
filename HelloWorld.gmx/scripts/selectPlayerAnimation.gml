@@ -41,7 +41,12 @@ if (collideTerrain(x, y+1)) {
         sprite_index = spr_player_roll;
     }
     else if (attacking) {
-        sprite_index = spr_player_atk;
+        if (equipped == OHS_ID)
+             sprite_index = spr_player_atk;
+        else if (equipped == CANDLE_ID) 
+            sprite_index = spr_player_atk_candle;
+        else if (equipped == THS_ID)
+            sprite_index = spr_player_atk_ths;
     } else if (hsp != 0) {
         if (hsp == abs(movespeed))
             sprite_index = spr_player_sprint;
@@ -61,7 +66,12 @@ if (collideTerrain(x, y+1)) {
         sprite_index = spr_player_roll;
     }
     else if (attacking) {
-        sprite_index = spr_player_air_atk;
+        if (equipped == OHS_ID)
+            sprite_index = spr_player_atk;
+        else if (equipped == CANDLE_ID)
+            sprite_index = spr_player_atk_candle;
+        else if (equipped == THS_ID)
+            sprite_index = spr_player_atk_ths;
     } else if (vsp < -APEX_CONST) {
         sprite_index = spr_player_jump;
     } else if (vsp > APEX_CONST) {

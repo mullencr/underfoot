@@ -5,7 +5,15 @@ if (enemy != noone) {
         
         
         if (!swing_has_hit) {
-            enemy.en_health -= 10;
+            var damnage = 0;
+            if (equipped == OHS_ID)
+                damnage = OHS_DMG;
+            else if (equipped == CANDLE_ID)
+                damnage = CANDLE_DMG;
+            else if (equipped == THS_ID)
+                damnage = THS_DMG;
+                
+            enemy.en_health -= damnage;
             swing_has_hit = true;
             
             if (equipped == OHS_ID) {
