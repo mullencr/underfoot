@@ -13,6 +13,7 @@ if (!invincible) {
     
         
     if (hp <= 0) {
+        audio_stop_all();
         with (obj_snd_player) {
             sndLokiDeath();
         }

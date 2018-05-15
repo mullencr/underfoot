@@ -1,3 +1,5 @@
 // Kills the player
-audio_stop_all();
+with (obj_snd_player) {
+    sndLokiDeath();
+}
 instance_destroy(self);
