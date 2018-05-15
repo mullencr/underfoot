@@ -51,11 +51,6 @@ for(i = 0; i < ds_map_size(plat_graph); i++) {
         show_debug_message("        jump_dir: " + string(jump_dir));
         sub_key = ds_map_find_next(sub_map, sub_key);
     }
-    if(key.object_index == obj_plat_large) {
-    key.sprite_index = spr_plat_signal;
-    } else {
-    key.sprite_index = spr_floor_signal;
-    }
     key = ds_map_find_next(plat_graph, key);
 }
 

@@ -4,5 +4,5 @@ inst_end = instance_create(view_wview[0]/2, (view_hview[0]/2 - sprite_get_height
 inst_end.image_xscale = end_scale;
 inst_end.image_yscale = end_scale;
 
-start_show_count = 30;
+start_show_count = 60;
 has_shown = false;

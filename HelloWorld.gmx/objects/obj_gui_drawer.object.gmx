@@ -45,7 +45,7 @@ if (room == rm_start) {
 
 scroll_image_number = 3;
 scroll_image_index = 0;
-scroll_image_speed = 0.15;
+scroll_image_speed = 0.1;
 </string>
           </argument>
         </arguments>

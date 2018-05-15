@@ -4,6 +4,7 @@ dist = argument1;
 range_shoot = argument2;
 range_spot = argument3;
 range_atk = argument4;
+
 if (range_spot < dist && dist <= range_shoot && move_status != move_status.attacking) {
     path_end();
     speed = 0;

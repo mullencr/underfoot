@@ -42,7 +42,8 @@ if(instance_number(obj_player) > 0) {
     
     // We can keep the moving towards the player and the closeness attacking.
     dist = point_distance(enemy.x, enemy.y, obj_player.x, obj_player.y);
-    if (rest_count <= 0 && dist <= range_atk && enemy.move_status != move_status.attacking) {
+    on_ground = place_meeting(enemy.x, enemy.y+1, obj_surface_parent);
+    if (on_ground && rest_count <= 0 && dist <= range_atk && enemy.move_status != move_status.attacking) {
         enemy.move_status = move_status.attacking;
         enemy.sprite_index = spr_en_attack1;
         enemy.image_index = 0;
